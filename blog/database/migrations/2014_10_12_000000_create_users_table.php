@@ -21,6 +21,17 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->text('last_name');
+            $table->text('father_name')->nullable();
+            $table->text('address')->nullable();
+            $table->text('father_job')->nullable();
+            $table->bigInteger('mobile_number');
+            $table->bigInteger('father_mobile_number')->nullable();
+            $table->date('registery_date');
+            $table->date('expiration_date');
+            $table->smallInteger('grade');
+            $table->binary('ban_status');
+            $table->smallInteger('banded_times');
         });
     }
 
