@@ -19,8 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->text('first_name');
             $table->text('last_name');
             $table->text('father_name')->nullable();
             $table->text('address')->nullable();
@@ -28,10 +27,13 @@ class CreateUsersTable extends Migration
             $table->bigInteger('mobile_number');
             $table->bigInteger('father_mobile_number')->nullable();
             $table->date('registery_date');
-            $table->date('expiration_date');
+            $table->date('expiration_date')->nullable();
             $table->smallInteger('grade');
             $table->binary('ban_status');
-            $table->smallInteger('banded_times');
+            $table->smallInteger('banded_times')->default(0);
+            $table->string('user_type')->default('user') ;
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

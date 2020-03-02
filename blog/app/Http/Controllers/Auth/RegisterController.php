@@ -68,6 +68,18 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+            'father_name' => $data['father_name'],
+            'address' => $data['address'],
+            'father_job' => $data['father_job'],
+            'mobile_number' => $data['mobile_number'],
+            'father_mobile_number' => $data['father_mobile_number'],
+            'registery_date' => date("Y-m-d h:i:s"),
+            'expiration_date' => null ,
+            'grade' => $data['grade'] ,
+            'ban_status' => 1 ,
+            'user_type' => $data['user_type']
         ]);
     }
 }
