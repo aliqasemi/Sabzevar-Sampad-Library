@@ -55,9 +55,7 @@
                                         @csrf
                                     </form>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-white" data-target="#register" href="/panel">پنل مدیریت</a>
-                                </li>
+
                                 <li class="nav-item">
                                     <a class="nav-link text-white" data-target="#register" href="/register">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</a>
                                 </li>

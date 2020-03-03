@@ -33,7 +33,7 @@
                                         برای اضاه کردن کتاب دکمه زیر را بفشارید:
                                         <br>
                                         <br>
-                                        <a href="#" class="btn btn-primary">اضافه کردن کتاب</a>
+                                        <a href="/add-book-form" class="btn btn-primary">اضافه کردن کتاب</a>
                                     </div>
                                 </div>
                             </div>

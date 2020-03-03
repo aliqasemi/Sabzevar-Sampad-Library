@@ -62,7 +62,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">نام</label>
+                            <label for="first_name" class="col-md-4 col-form-label text-md-right">نام</label>
 
                             <div class="col-md-6">
                                 <input id="first_name" type="text" class="form-control" name="first_name" required>
@@ -70,7 +70,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right"> نام خانوادگی</label>
+                            <label for="last_name" class="col-md-4 col-form-label text-md-right"> نام خانوادگی</label>
 
                             <div class="col-md-6">
                                 <input id="last_name" type="text" class="form-control" name="last_name" required>
@@ -78,7 +78,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right"> نام پدر</label>
+                            <label for="father_name" class="col-md-4 col-form-label text-md-right"> نام پدر</label>
 
                             <div class="col-md-6">
                                 <input id="father_name" type="text" class="form-control" name="father_name">
@@ -86,7 +86,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right"> آدرس</label>
+                            <label for="address" class="col-md-4 col-form-label text-md-right"> آدرس</label>
 
                             <div class="col-md-6">
                                 <input id="address" type="text" class="form-control" name="address">
@@ -94,7 +94,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right"> شغل پدر</label>
+                            <label for="father_job" class="col-md-4 col-form-label text-md-right"> شغل پدر</label>
 
                             <div class="col-md-6">
                                 <input id="father_job" type="text" class="form-control" name="father_job">
@@ -102,7 +102,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">شماره موبایل</label>
+                            <label for="mobile_number" class="col-md-4 col-form-label text-md-right">شماره موبایل</label>
 
                             <div class="col-md-6">
                                 <input id="mobile_number" type="text" class="form-control" name="mobile_number">
@@ -110,7 +110,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right"> شماره موبایل پدر</label>
+                            <label for="father_mobile_number" class="col-md-4 col-form-label text-md-right"> شماره موبایل پدر</label>
 
                             <div class="col-md-6">
                                 <input id="father_mobile_number" type="text" class="form-control" name="father_mobile_number">
@@ -118,7 +118,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right"> مقطع طحصیلی</label>
+                            <label for="grade" class="col-md-4 col-form-label text-md-right"> مقطع طحصیلی</label>
 
                             <div class="col-md-6">
                                 <input id="grade" type="number" class="form-control" name="grade">
@@ -126,7 +126,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">نوع کاربر</label>
+                            <label for="user_type" class="col-md-4 col-form-label text-md-right">نوع کاربر</label>
 
                             <div class="col-md-6">
                                 <select class="form-control" id="user_type" name="user_type">
