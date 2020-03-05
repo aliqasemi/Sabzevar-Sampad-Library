@@ -12,10 +12,6 @@ class BookController extends Controller
 {
     //
 
-
-
-
-
     public function add_book_form(){
         return view('add_book_form') ;
     }
@@ -30,9 +26,17 @@ class BookController extends Controller
             'lended' => 1
         ]);
 
-
         return redirect('/home') ;
 
+    }
+
+    public function book_list(){
+        $data = book::get() ;
+        return view('book_list' , compact('data')) ;
+    }
+
+    public function book_detail(book $book){
+        return view('book_detail' , compact('book')) ;
     }
 
 

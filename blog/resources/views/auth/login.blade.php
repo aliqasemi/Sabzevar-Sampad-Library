@@ -16,12 +16,7 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                
                             </div>
                         </div>
 
@@ -31,11 +26,6 @@
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
                             </div>
                         </div>
 
@@ -63,6 +53,24 @@
                                 @endif
                             </div>
                         </div>
+                        <br>
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        @if($error == "The email field is required.")
+                                            <li>ایمیل خود را وارد نمایید</li>
+                                        @endif
+                                        @if($error == "The password field is required.")
+                                            <li>رمز عبور خود را وارد نمایید</li>
+                                        @endif
+                                        @if($error == "These credentials do not match our records.")
+                                            <li>نام کاربری یا کلمه عبور اشتباه است</li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                     </form>
                 </div>
             </div>

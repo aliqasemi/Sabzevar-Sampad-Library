@@ -23,3 +23,9 @@ Route::get('/add-book-form', 'BookController@add_book_form');
 
 
 Route::post('/add-book', 'BookController@add_book');
+
+Route::get('/book_list' , 'BookController@book_list') ;
+
+Route::get('/book-detail/{book}' , 'BookController@book_detail') ;
+
+Route::get('/branches/branch_delete/{branches}' , 'BranchesController@branch_delete') ;

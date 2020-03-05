@@ -72,7 +72,6 @@
                                                     @if($error == "The shabak has already been taken.")
                                                         <li>این شماره شابک قبلا اختیار شده است</li>
                                                     @endif
-                                                        <li>{{ $error }}</li>
                                                 @endforeach
                                             </ul>
                                         </div>
@@ -104,7 +103,27 @@
                         @endif
 
                         <a href="/login">ابتدا باید وارد سایت شوید...</a>
+                            <script type="text/javascript">
+                                var count = 5;
+                                var redirect = "/login";
 
+                                function countDown(){
+                                    var timer = document.getElementById("timer");
+                                    if(count > 0){
+                                        count--;
+                                        timer.innerHTML ="<p>" + count + "</p>";
+                                        //delay for 1000ms
+                                        setTimeout("countDown()", 1000);
+                                    }else{
+                                        window.location.href = redirect;
+                                    }
+                                }
+
+                            </script>
+                        <br>
+                            <span id="timer">
+                            <script type="text/javascript">countDown();</script>
+                            </span>
                     </div>
                 </div>
             </div>
