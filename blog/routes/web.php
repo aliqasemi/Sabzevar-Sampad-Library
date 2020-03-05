@@ -28,4 +28,8 @@ Route::get('/book_list' , 'BookController@book_list') ;
 
 Route::get('/book-detail/{book}' , 'BookController@book_detail') ;
 
-Route::get('/branches/branch_delete/{branches}' , 'BranchesController@branch_delete') ;
+Route::get('/book_delete/{book}' , 'BookController@book_delete') ;
+
+Route::get('/book_update_form/{book}' , 'BookController@update_book_form') ;
+
+Route::patch('/book_update/{book}' , 'BookController@book_update') ;

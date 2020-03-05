@@ -60,9 +60,33 @@
                                     </span>
                             </a>
 
-                            <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="">ویرایش</a>
+                            <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="/book_update_form/{{$book->id}}">ویرایش</a>
 
-                            <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="">حذف</a>
+                            <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="/book_update/{{$book->id}}" data-toggle="modal" data-target="#deleteModal">حذف</a>
+
+                            <!--modal for delete-->
+                            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header" style="direction: rtl">
+                                            <h5 class="modal-title" id="exampleModalLabel">حذف کتاب</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="direction: ltr">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body" style="direction: rtl">
+                                            آیا از حذف کتاب {{$book->name}} مطمين هستید؟
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">خیر</button>
+                                            <a type="button" class="btn btn-primary" href="/book_delete/{{$book->id}}" >بله حذف کن</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
                         </div>
                     </div>
                 </div>

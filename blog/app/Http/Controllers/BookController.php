@@ -39,6 +39,20 @@ class BookController extends Controller
         return view('book_detail' , compact('book')) ;
     }
 
+    public function book_delete(book $book){
+        $book->delete() ;
+        return redirect('/book_list') ;
+    }
+
+    public function update_book_form(book $book){
+        return view('update_book_form' , compact('book')) ;
+    }
+
+    public function book_update(book $book , bookRequest $request){
+        $book->update($request->all()) ;
+        return redirect('/book_list') ;
+    }
+
 
 
 }

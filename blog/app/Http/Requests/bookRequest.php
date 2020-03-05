@@ -26,13 +26,26 @@ class bookRequest extends FormRequest
 
     public function rules()
     {
-        return [
-            //
-            'name' => ['required', 'string', 'max:100'],
-            'author' => ['required', 'string', 'max:100'],
-            'subject' => [ 'string', 'max:100'],
-            'shabak' => ['string', 'max:100' , 'unique:books'] ,
-        ];
+        switch ($this->method())
+        {
+            case 'POST':
+                return [
+                    //
+                    'name' => ['required', 'string', 'max:100'],
+                    'author' => ['required', 'string', 'max:100'],
+                    'subject' => [ 'string', 'max:100'],
+                    'shabak' => ['string', 'max:100' , 'unique:books'] ,
+                ];
+            case 'PATCH':
+            case 'PUT':
+                return [
+                    'shabak' => 'string|max:100,'.$this->route('book')->id,
+                    'name' => ['required', 'string', 'max:100'],
+                    'author' => ['required', 'string', 'max:100'],
+                    'subject' => [ 'string', 'max:100']
+                ];
+                break;
+        }
     }
 
     public function messages()
