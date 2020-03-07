@@ -29,24 +29,27 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6">
-                <div class="card login-register-card">
-                    <div class="card-body">
-                        <h5 class="card-title">ثبت نام</h5>
-                        <p class="card-text">اگر عضو سایت نیستید، باید ثبت نام کنید</p>
-                        <a href="/register" class="btn btn-primary">ثبت نام</a>
+            @if(Auth::check())
+                <div class="col-sm-12">
+                    <div class="card login-register-card">
+                        <div class="card-body">
+                            <h5 class="card-title">ثبت نام</h5>
+                            <p class="card-text">برای ثبت نام، دکمه ثبت نام را انتخاب کنید</p>
+                            <a href="/register" class="btn btn-primary">ثبت نام</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="card login-register-card">
-                    <div class="card-body">
-                        <h5 class="card-title">ورود</h5>
-                        <p class="card-text">برای ورود به سیستم ورود را انتخاب کنید</p>
-                        <a href="/login" class="btn btn-primary">ورود</a>
+            @else
+                <div class="col-sm-12">
+                    <div class="card login-register-card">
+                        <div class="card-body">
+                            <h5 class="card-title">ورود</h5>
+                            <p class="card-text">برای ورود به سیستم ورود را انتخاب کنید</p>
+                            <a href="/login" class="btn btn-primary">ورود</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endif
         </div>
     </div>
 @endsection

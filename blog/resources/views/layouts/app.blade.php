@@ -57,12 +57,14 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" data-target="#register" href="/register">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</a>
+                                    <a class="nav-link text-white" data-target="#register" href="/home">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</a>
                                 </li>
+                                @can('isAdmin')
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" data-target="#register" href="/register">ثبت نام</a>
+                                    </li>
+                                @endcan
                             @else
-                                <li class="nav-item">
-                                    <a class="nav-link text-white" data-target="#register" href="/register">ثبت نام</a>
-                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-white" data-target="#login" href="/home">ورود</a>
                                 </li>
