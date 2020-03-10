@@ -71,7 +71,7 @@
                                                         برای قرض گرفتن(رزرو) کتاب دکمه زیر را بفشارید:
                                                         <br>
                                                         <br>
-                                                        <a href="#" class="btn btn-primary">اضافه کردن کتاب</a>
+                                                        <a href="/add-lending-form" class="btn btn-primary">قرض کردن کتاب</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -131,7 +131,7 @@
                                             برای قرض گرفتن(رزرو) کتاب دکمه زیر را بفشارید:
                                             <br>
                                             <br>
-                                            <a href="#" class="btn btn-primary">اضافه کردن کتاب</a>
+                                            <a href="/add-lending-form" class="btn btn-primary">قرض کردن کتاب</a>
                                         </div>
                                     </div>
                                 </div>
