@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 
 class lendingRequest extends FormRequest
@@ -23,8 +24,23 @@ class lendingRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+        $before_date = Carbon::now()->subDays(0)->toDateString();
+        $after_date = Carbon::now()->addDays(15)->toDateString();
+
+        switch ($this->method()){
+            case 'POST':
+                return [
+                    //
+                    'lending_date' => 'required|date|after:yesterday',
+                    'return_date' => 'required|date|before:' . $after_date . '|after:' . $before_date,
+                ];
+            case 'PATCH':
+            case 'PUT':
+                return [
+                    'lending_date' => 'required|date|after:yesterday',
+                    'return_date' => 'required|date|before:' . $after_date . '|after:' . $before_date,
+                ];
+                break;
+        }
     }
 }

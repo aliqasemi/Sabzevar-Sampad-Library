@@ -23,7 +23,13 @@
                                 <div class="col-md-6">
                                     <select class="form-control" id="book_id" name="book_id" required>
                                         @foreach($books as $book)
-                                            <option value="{{$book->id}}">{{$book->name}}</option>
+                                            @if($book->lended = 1)
+                                                <option value="{{$book->id}}">{{$book->name}} &nbsp;&nbsp;&nbsp;&nbsp; آزاد
+                                                </option>
+                                            @else
+                                                 <option disabled value="{{$book->id}}">{{$book->name}} &nbsp;&nbsp;&nbsp;&nbsp; رزرو شده
+                                                 </option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>
@@ -37,48 +43,66 @@
                                 </div>
                             </div>
 
+
+
                             <div class="form-group row">
                                 <label for="lending_date" class="col-md-4 col-form-label text-md-right"> تاریخ قرض گرفتن کتاب</label>
                                 <div class="col-md-6">
-                                    <input id="lending_date" onload="getDate()" type="date" class="form-control" name="lending_date" disabled>
+                                    <input id="lending_date" type="date" class="form-control" name="lending_date">
+                                    <script type = "text/javascript">
+                                        var today = new Date();
+                                        var dd = today.getDate();
+                                        var mm = today.getMonth() + 1; //January is 0!
+                                        var yyyy = today.getFullYear();
+                                        if(dd<10) {
+                                            dd = '0'+dd
+                                        }
+                                        if(mm<10) {
+                                            mm = '0'+mm
+                                        }
+                                        today = yyyy + '-' + mm + '-' + dd;
+                                        document.getElementById("lending_date").value = today;
+                                    </script>
                                 </div>
                             </div>
+
+
+
 
                             <div class="form-group row">
                                 <label for="return_date" class="col-md-4 col-form-label text-md-right">تاریخ بازگشت کتاب</label>
 
                                 <div class="col-md-6">
                                     <input id="return_date" type="date" class="form-control" name="return_date">
+                                    <script type = "text/javascript">
+                                        var today = new Date();
+                                        var dd = today.getDate();
+                                        var mm = today.getMonth() + 1; //January is 0!
+                                        var yyyy = today.getFullYear();
+                                        if(dd<10) {
+                                            dd = '0'+dd
+                                        }
+                                        if(mm<10) {
+                                            mm = '0'+mm
+                                        }
+                                        today = yyyy + '-' + mm + '-' + dd;
+                                        var endDate = new Date();
+                                        endDate.setDate(today.getDate()+14);
+                                        var day = endDate.getDate();
+                                        var month = endDate.getMonth() + 1 ;
+                                        var year = endDate.getFullYear();
+                                        endDate = year + '-' + month + '-' + day ;
+                                        document.getElementById("return_date").value = endDate;
+                                    </script>
                                 </div>
                             </div>
 
-                            <script>
-                                function getDate() {
-                                    var today = new Date();
-                                    var dd = today.getDate();
-                                    var mm = today.getMonth() + 1; //January is 0!
-                                    var yyyy = today.getFullYear();
 
-                                    if(dd<10) {
-                                        dd = '0'+dd
-                                    }
-
-                                    if(mm<10) {
-                                        mm = '0'+mm
-                                    }
-
-                                    today = yyyy + '-' + mm + '-' + dd;
-                                    var two_week_after ;
-                                    two_week_after.setDate(today.getDate + 14) ;
-                                    document.getElementById("lending_date").value = today;
-                                    document.getElementById("return_date").value = two_week_after ;
-                                }
-                            </script>
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        انچام عملیات
+                                    <button type="submit"  class="btn btn-primary">
+                                        انجام عملیات
                                     </button>
                                 </div>
                             </div>
@@ -89,15 +113,19 @@
                                 <div class="alert alert-danger">
                                     <ul>
                                         @foreach ($errors->all() as $error)
-                                            @if($error == "The name field is required.")
-                                                <li>نوشتن نام کتاب الزامی است</li>
+                                            <!-- //The lending date must be a date after today. The return date must be a date before !-->
+                                            @if((strpos($error , "before") !== false))
+                                                <li>مهلت ارسال کتاب نهایتا تا 14 روز پس از تحویل کتاب است</li>
                                             @endif
-                                            @if($error == "The author field is required.")
-                                                <li>نوشتن نام نویسنده الزامی است</li>
+                                            @if(@$error == "The lending date must be a date after yesterday.")
+                                                 <li>تاریخ قرض گرفن کتاب قبل از امروز نمیتواند باشد</li>
                                             @endif
-                                            @if($error == "The shabak has already been taken.")
-                                                <li>این شماره شابک قبلا اختیار شده است</li>
+                                            @if(@$error == "The return date field is required.")
+                                                 <li>وارد کردن تاریخ بازگشت الزامیست</li>
                                             @endif
+                                                @if(@$error == "The lending date field is required.")
+                                                    <li>وارد کردن تاریخ بازگشت الزامیست</li>
+                                                @endif
                                         @endforeach
                                     </ul>
                                 </div>
