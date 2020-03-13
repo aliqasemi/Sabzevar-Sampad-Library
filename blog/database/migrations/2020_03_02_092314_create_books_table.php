@@ -20,7 +20,7 @@ class CreateBooksTable extends Migration
             $table->text('author');
             $table->text('subject')->nullable();
             $table->text('shabak')->nullable();
-            $table->binary('lended');
+            $table->boolean('lended');
         });
     }
 

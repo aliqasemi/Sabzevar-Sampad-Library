@@ -23,7 +23,7 @@
                                 <div class="col-md-6">
                                     <select class="form-control" id="book_id" name="book_id" required>
                                         @foreach($books as $book)
-                                            @if($book->lended = 1)
+                                            @if($book->lended == 1)
                                                 <option value="{{$book->id}}">{{$book->name}} &nbsp;&nbsp;&nbsp;&nbsp; آزاد
                                                 </option>
                                             @else

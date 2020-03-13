@@ -54,7 +54,13 @@
                             </a>
                             <a href="#" class="bg-primary list-group-item list-group-item-action">
                                     <span class="row">
-                                        <span class="col-lg-4 text-white">{{$book->lended}}</span>
+                                        <span class="col-lg-4 text-white">
+                                            @if($book->lended == 1)
+                                                آزاد
+                                            @else
+                                                رزرو شده
+                                            @endif
+                                        </span>
                                         <span class="col-lg-4"></span>
                                         <span class="col-lg-4"></span>
                                     </span>

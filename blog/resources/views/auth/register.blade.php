@@ -157,7 +157,7 @@
             <div class="col-md-8">
                 <div class="card">
                     @if(Auth::check())
-                        <div class="card-header">اضافه کردن کتاب</div>
+                        <div class="card-header">کاربر</div>
                     @else
                         <div class="card-header">خطا</div>
                     @endif

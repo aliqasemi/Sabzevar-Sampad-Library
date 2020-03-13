@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
             $table->date('registery_date');
             $table->date('expiration_date')->nullable();
             $table->smallInteger('grade');
-            $table->binary('ban_status');
+            $table->boolean('ban_status');
             $table->smallInteger('banded_times')->default(0);
             $table->string('user_type')->default('user') ;
             $table->rememberToken();
