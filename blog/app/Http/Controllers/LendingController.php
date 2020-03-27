@@ -18,7 +18,6 @@ class LendingController extends Controller
 
     public function add_lending(lendingRequest $request){
         $lended = book::where('id' , $request['book_id'])->value('lended') ;
-        echo $lended ;
         if ($lended == 1){
             $lended = 0 ;
             lending::create([
@@ -31,7 +30,31 @@ class LendingController extends Controller
             $book->update([
                 'lended' => $lended ,
             ]) ;
+            return redirect('/home') ;
 
         }
     }
+
+    public function lending_list(User $user){
+        $data = lending::get() ;
+        return view('lending_list' , compact('data')) ;
+    }
+
+    public function update_lending_form(lending $lending){
+        return view('update_lending_form' , compact('user' , 'books' , 'lending')) ;
+    }
+
+    public function lending_update(lending $lending , lendingRequest $request){
+        $lended = book::where('id' , $request['book_id'])->value('lended') ;
+        if ($lended == 0){
+            $lended = 1 ;
+            $lending->update($request->all()) ;
+            $book = book::find($request['book_id']) ;
+            $book->update([
+                'lended' => $lended ,
+            ]) ;
+        }
+        return redirect('/home') ;
+    }
+
 }

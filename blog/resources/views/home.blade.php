@@ -53,7 +53,7 @@
                                                         برای باز پس گیری کتاب دکمه زیر را بفشارید:
                                                         <br>
                                                         <br>
-                                                        <a href="#" class="btn btn-primary">اضافه کردن کتاب</a>
+                                                        <a href="/lending-list/{{Auth::user()->id}}" class="btn btn-primary">پس گرفتن کتاب</a>
                                                     </div>
                                                 </div>
                                             </div>

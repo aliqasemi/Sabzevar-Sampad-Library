@@ -42,3 +42,9 @@ Route::patch('/book_update/{book}' , 'BookController@book_update') ;
 Route::get('/add-lending-form', 'LendingController@add_lending_form');
 
 Route::post('/add-lending','LendingController@add_lending');
+
+Route::get('/lending-list/{user}', 'LendingController@lending_list');
+
+Route::get('/update-lending-form/{lending}', 'LendingController@update_lending_form');
+
+Route::patch('/lending_update/{lending}' , 'lendingController@lending_update') ;

@@ -37,7 +37,7 @@ class lendingRequest extends FormRequest
             case 'PATCH':
             case 'PUT':
                 return [
-                    'lending_date' => 'required|date|after:yesterday',
+                    'lending_date' => 'required',
                     'return_date' => 'required|date|before:' . $after_date . '|after:' . $before_date,
                 ];
                 break;

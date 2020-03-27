@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">ویرایش کتاب</div>
+                    <div class="card-header">پس گرفتن کتاب</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -14,44 +14,65 @@
                             </div>
                         @endif
 
-                        <form method="POST" action="/book_update/{{$book->id}}" style="direction: rtl">
+                        <form method="POST" action="/lending_update/{{$lending->id}}" style="direction: rtl">
                             @csrf
                             {{method_field('PATCH')}}
                             <div class="form-group row">
-                                <label for="name"  class="col-md-4 col-form-label text-md-right"> نام کتاب</label>
+                                <label for="book_id" class="col-md-4 col-form-label text-md-right"> نام کتاب</label>
+
                                 <div class="col-md-6">
-                                    <input id="name" value="{{$book->name}}" type="text" class="form-control" name="name" required>
+                                    <select class="form-control" id="book_id" name="book_id" required>
+                                        <option value="{{\App\book::find($lending->book_id)->id}}" >{{\App\book::find($lending->book_id)->name}}</option>
+                                    </select>
                                 </div>
                             </div>
+
+                            <div class="form-group row" style="display: none">
+                                <label for="user_id" class="col-md-4 col-form-label text-md-right"></label>
+                                <div class="col-md-6">
+                                    <input id="user_id" value="{{ Auth::user()->id }}" type="text" class="form-control" name="user_id" required>
+                                </div>
+                            </div>
+
+
 
                             <div class="form-group row">
-                                <label for="author" class="col-md-4 col-form-label text-md-right"> نویسنده کتاب</label>
-
+                                <label for="lending_date" class="col-md-4 col-form-label text-md-right"> تاریخ قرض گرفتن کتاب</label>
                                 <div class="col-md-6">
-                                    <input id="author" value="{{$book->author}}" type="text" class="form-control" name="author" required>
+                                    <input id="lending_date" value="{{$lending->lending_date}}" name="lending_date"  type="date" class="form-control">
                                 </div>
                             </div>
+
+
+
 
                             <div class="form-group row">
-                                <label for="subject" class="col-md-4 col-form-label text-md-right"> موضوع کتاب</label>
-
+                                <label for="return_date" class="col-md-4 col-form-label text-md-right">تاریخ بازگشت کتاب</label>
                                 <div class="col-md-6">
-                                    <input id="subject" value="{{$book->subject}}" type="text" class="form-control" name="subject" required>
+                                    <input id="return_date" type="date" class="form-control" name="return_date">
+                                    <script type = "text/javascript">
+                                        var today = new Date();
+                                        var dd = today.getDate();
+                                        var mm = today.getMonth() + 1; //January is 0!
+                                        var yyyy = today.getFullYear();
+                                        if(dd<10) {
+                                            dd = '0'+dd
+                                        }
+                                        if(mm<10) {
+                                            mm = '0'+mm
+                                        }
+                                        today = yyyy + '-' + mm + '-' + dd;
+                                        document.getElementById("return_date").value = today;
+                                    </script>
                                 </div>
                             </div>
 
-                            <div class="form-group row">
-                                <label for="shabak" class="col-md-4 col-form-label text-md-right"> شماره شابک کتاب</label>
 
-                                <div class="col-md-6">
-                                    <input id="shabak" value="{{$book->shabak}}" type="text" class="form-control" name="shabak">
-                                </div>
-                            </div>
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        ویرایش کتاب
+                                    <button type="submit"  class="btn btn-primary">
+                                        انجام عملیات
                                     </button>
                                 </div>
                             </div>
@@ -61,15 +82,19 @@
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <ul>
-                                        @foreach ($errors->all() as $error)
-                                            @if($error == "The name field is required.")
-                                                <li>نوشتن نام کتاب الزامی است</li>
+                                    @foreach ($errors->all() as $error)
+                                        <!-- //The lending date must be a date after today. The return date must be a date before !-->
+                                            @if((strpos($error , "before") !== false))
+                                                <li>مهلت ارسال کتاب نهایتا تا 14 روز پس از تحویل کتاب است</li>
                                             @endif
-                                            @if($error == "The author field is required.")
-                                                <li>نوشتن نام نویسنده الزامی است</li>
+                                            @if(@$error == "The lending date must be a date after yesterday.")
+                                                <li>تاریخ قرض گرفن کتاب قبل از امروز نمیتواند باشد</li>
                                             @endif
-                                            @if($error == "The shabak has already been taken.")
-                                                <li>این شماره شابک قبلا اختیار شده است</li>
+                                            @if(@$error == "The return date field is required.")
+                                                <li>وارد کردن تاریخ بازگشت الزامیست</li>
+                                            @endif
+                                            @if(@$error == "The lending date field is required.")
+                                                <li>وارد کردن تاریخ ارسال الزامیست</li>
                                             @endif
                                         @endforeach
                                     </ul>
