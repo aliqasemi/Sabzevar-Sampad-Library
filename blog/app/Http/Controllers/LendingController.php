@@ -18,20 +18,32 @@ class LendingController extends Controller
 
     public function add_lending(lendingRequest $request){
         $lended = book::where('id' , $request['book_id'])->value('lended') ;
+        $access = User::where('id' , $request['user_id'])->value('user_type') ;
         if ($lended == 1){
             $lended = 0 ;
-            lending::create([
-                'book_id' =>$request['book_id'] ,
-                'user_id' =>$request['user_id'] ,
-                'lending_date' =>$request['lending_date'] ,
-                'return_date' =>$request['return_date'] ,
-            ]);
+            if ($access == 'admin'){
+                lending::create([
+                    'book_id' =>$request['book_id'] ,
+                    'user_id' =>$request['user_id'] ,
+                    'lending_date' =>$request['lending_date'] ,
+                    'return_date' =>$request['return_date'] ,
+                    'ban_status' => 1
+                ]);
+            }
+            else{
+                lending::create([
+                    'book_id' =>$request['book_id'] ,
+                    'user_id' =>$request['user_id'] ,
+                    'lending_date' =>$request['lending_date'] ,
+                    'return_date' =>$request['return_date'] ,
+                    'ban_status' => 0
+                ]);
+            }
             $book = book::find($request['book_id']) ;
             $book->update([
                 'lended' => $lended ,
             ]) ;
             return redirect('/home') ;
-
         }
     }
 

@@ -33,7 +33,7 @@
 
                                                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                                                     <div class="card-body">
-                                                        برای اضاه کردن کتاب دکمه زیر را بفشارید:
+                                                        برای اضافه کردن کتاب دکمه زیر را بفشارید
                                                         <br>
                                                         <br>
                                                         <a href="/add-book-form" class="btn btn-primary">اضافه کردن کتاب</a>
@@ -50,7 +50,7 @@
                                                 </div>
                                                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                                                     <div class="card-body">
-                                                        برای باز پس گیری کتاب دکمه زیر را بفشارید:
+                                                        برای باز پس گیری کتاب دکمه زیر را بفشارید
                                                         <br>
                                                         <br>
                                                         <a href="/lending-list/{{Auth::user()->id}}" class="btn btn-primary">پس گرفتن کتاب</a>
@@ -62,13 +62,12 @@
                                                     <h5 class="mb-0">
                                                         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                                             قرض کتاب
-
                                                         </button>
                                                     </h5>
                                                 </div>
                                                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                                     <div class="card-body">
-                                                        برای قرض گرفتن(رزرو) کتاب دکمه زیر را بفشارید:
+                                                        برای قرض گرفتن(رزرو) کتاب دکمه زیر را بفشارید
                                                         <br>
                                                         <br>
                                                         <a href="/add-lending-form" class="btn btn-primary">قرض کردن کتاب</a>
@@ -88,7 +87,7 @@
 
                                                 <div id="collapse4" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                                                     <div class="card-body">
-                                                        برای دیدن لیست کتاب دکمه زیر را بفشارید:
+                                                        برای دیدن لیست کتاب دکمه زیر را بفشارید
                                                         <br>
                                                         <br>
                                                         <a href="/book_list" class="btn btn-primary">لیست کتاب</a>
@@ -105,13 +104,32 @@
                                                 </div>
                                                 <div id="collapse5" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                                                     <div class="card-body">
-                                                        برای باز برای دیدن لیست امانت ها دکمه زیر را بفشارید:
+                                                        برای باز برای دیدن لیست امانت ها دکمه زیر را بفشارید
                                                         <br>
                                                         <br>
                                                         <a href="#" class="btn btn-primary">لیست امانت کتاب</a>
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <div class="card">
+                                                <div class="card-header" id="headingThree">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapseThree">
+                                                            لیست سفارشات
+                                                        </button>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapse6" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                                    <div class="card-body">
+                                                        برای باز برای دیدن لیست سفارشات دکمه زیر را بفشارید
+                                                        <br>
+                                                        <br>
+                                                        <a href="#" class="btn btn-primary">لیست سفارشات</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -122,7 +140,6 @@
                                         <h5 class="mb-0">
                                             <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                                 قرض کتاب
-
                                             </button>
                                         </h5>
                                     </div>

@@ -22,6 +22,7 @@ class CreateLendingsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->date('lending_date') ;
             $table->date('return_date') ;
+            $table->Integer('ban_status')->unsigned() ;
         });
     }
 

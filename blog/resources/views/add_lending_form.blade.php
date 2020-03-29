@@ -41,6 +41,7 @@
                                 <div class="col-md-6">
                                     <input id="user_id" value="{{ Auth::user()->id }}" type="text" class="form-control" name="user_id" required>
                                 </div>
+
                             </div>
 
 
