@@ -44,16 +44,16 @@
                                                 <div class="card-header" id="headingThree">
                                                     <h5 class="mb-0">
                                                         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                            باز پس گیری کتاب
+                                                            لیست امانت ها
                                                         </button>
                                                     </h5>
                                                 </div>
                                                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                                                     <div class="card-body">
-                                                        برای باز پس گیری کتاب دکمه زیر را بفشارید
+                                                        برای لیست امانت ها و  باز پس گیری کتاب دکمه زیر را بفشارید
                                                         <br>
                                                         <br>
-                                                        <a href="/lending-list/{{Auth::user()->id}}" class="btn btn-primary">پس گرفتن کتاب</a>
+                                                        <a href="/lending-list" class="btn btn-primary">لیست امانت ها</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -94,23 +94,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="card">
-                                                <div class="card-header" id="headingThree">
-                                                    <h5 class="mb-0">
-                                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapseThree">
-                                                            لیست امانت ها
-                                                        </button>
-                                                    </h5>
-                                                </div>
-                                                <div id="collapse5" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                                    <div class="card-body">
-                                                        برای باز برای دیدن لیست امانت ها دکمه زیر را بفشارید
-                                                        <br>
-                                                        <br>
-                                                        <a href="#" class="btn btn-primary">لیست امانت کتاب</a>
-                                                    </div>
-                                                </div>
-                                            </div>
 
                                             <div class="card">
                                                 <div class="card-header" id="headingThree">
@@ -125,7 +108,7 @@
                                                         برای باز برای دیدن لیست سفارشات دکمه زیر را بفشارید
                                                         <br>
                                                         <br>
-                                                        <a href="#" class="btn btn-primary">لیست سفارشات</a>
+                                                        <a href="/order-list" class="btn btn-primary">لیست سفارشات</a>
                                                     </div>
                                                 </div>
                                             </div>

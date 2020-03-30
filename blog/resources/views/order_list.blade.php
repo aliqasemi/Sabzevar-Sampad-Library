@@ -17,14 +17,14 @@
                         <div class="list-group">
                             <a href="#" class="bg-dark text-white list-group-item list-group-item-action">
                                     <span class="row">
-                                        <span class="col-lg-4 text-primary">تاریخ قرض گرفتن کتاب</span>
+                                        <span class="col-lg-4 text-primary">تاریخ ثبت سفارش کتاب</span>
                                         <span class="col-lg-4 text-warning">تاریخ تحویل</span>
                                         <span class="col-lg-4 text-info">نام کتاب</span>
                                     </span>
                             </a>
                             @foreach($data as $d)
-                                @if($d->ban_status == 1)
-                                    <a href="/lending-detail/{{$d->id}}" class="bg-primary list-group-item list-group-item-action">
+                                @if($d->ban_status == 0)
+                                    <a href="/update-lending-form/{{$d->id}}" class="bg-primary list-group-item list-group-item-action">
                                         <span class="row">
                                             <span class="col-lg-4">{{$d->lending_date}}</span>
                                             <span class="col-lg-4">{{$d->return_date}}</span>

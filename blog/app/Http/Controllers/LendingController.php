@@ -47,9 +47,19 @@ class LendingController extends Controller
         }
     }
 
-    public function lending_list(User $user){
-        $data = lending::get() ;
+    public function lending_list(){
+        $data = lending::where('ban_status' , 1)->get() ;
         return view('lending_list' , compact('data')) ;
+    }
+
+    public function order_list ()
+    {
+        $data = lending::where('ban_status' , 0)->get() ;
+        return view('order_list' , compact('data')) ;
+    }
+
+    public function lending_detail(lending $lending){
+        return view('lending_detail' , compact('lending')) ;
     }
 
     public function update_lending_form(lending $lending){

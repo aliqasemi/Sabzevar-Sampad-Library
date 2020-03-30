@@ -43,7 +43,11 @@ Route::get('/add-lending-form', 'LendingController@add_lending_form');
 
 Route::post('/add-lending','LendingController@add_lending');
 
-Route::get('/lending-list/{user}', 'LendingController@lending_list');
+Route::get('/lending-list/', 'LendingController@lending_list');
+
+Route::get('/order-list/', 'LendingController@order_list');
+
+Route::get('/lending-detail/{lending}', 'LendingController@lending_detail');
 
 Route::get('/update-lending-form/{lending}', 'LendingController@update_lending_form');
 
