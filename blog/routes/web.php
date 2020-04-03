@@ -49,6 +49,12 @@ Route::get('/order-list/', 'LendingController@order_list');
 
 Route::get('/lending-detail/{lending}', 'LendingController@lending_detail');
 
-Route::get('/update-lending-form/{lending}', 'LendingController@update_lending_form');
+Route::get('/order-detail/{lending}', 'LendingController@order_detail');
+
+Route::get('/lending_update_form/{lending}', 'LendingController@update_lending_form');
 
 Route::patch('/lending_update/{lending}' , 'lendingController@lending_update') ;
+
+Route::get('/lending_delete/{lending}' , 'LendingController@Lending_delete') ;
+
+Route::get('order_delete/{lending}' , 'LendingController@order_delete') ;

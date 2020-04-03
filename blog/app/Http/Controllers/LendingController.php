@@ -62,21 +62,48 @@ class LendingController extends Controller
         return view('lending_detail' , compact('lending')) ;
     }
 
+    public function order_detail(lending $lending){
+        return view('order_details' , compact('lending')) ;
+    }
+
     public function update_lending_form(lending $lending){
         return view('update_lending_form' , compact('user' , 'books' , 'lending')) ;
     }
 
     public function lending_update(lending $lending , lendingRequest $request){
-        $lended = book::where('id' , $request['book_id'])->value('lended') ;
-        if ($lended == 0){
-            $lended = 1 ;
-            $lending->update($request->all()) ;
-            $book = book::find($request['book_id']) ;
-            $book->update([
-                'lended' => $lended ,
+        $ban_status = $lending->ban_status ;
+        if ($ban_status == 0){
+            $ban_status = 1 ;
+            $lending->update([
+                'book_id' =>$request['book_id'] ,
+                'ban_status' => $ban_status ,
+                'user_id' => $lending->user_id ,
+                'lending_date' =>$request['lending_date'] ,
+                'return_date' =>$request['return_date'] ,
             ]) ;
         }
+        else{
+            $lending->update($request->all()) ;
+        }
         return redirect('/home') ;
+    }
+
+    public function Lending_delete(lending $lending){
+        $book = book::find($lending->book_id) ;
+        $book->update([
+            'lended' => 1 ,
+        ]) ;
+        $lending->delete() ;
+        return redirect('/lending-list') ;
+    }
+
+    public function order_delete(lending $lending){
+        $book = book::find($lending->book_id) ;
+        $book->update([
+            'lended' => 1 ,
+        ]) ;
+        $lending->delete() ;
+        return redirect('/lending-list') ;
     }
 
 }

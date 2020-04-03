@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">پس گرفتن کتاب</div>
+                    <div class="card-header">تاییدیه سفارش</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -49,30 +49,14 @@
                             <div class="form-group row">
                                 <label for="return_date" class="col-md-4 col-form-label text-md-right">تاریخ بازگشت کتاب</label>
                                 <div class="col-md-6">
-                                    <input id="return_date" type="date" class="form-control" name="return_date">
-                                    <script type = "text/javascript">
-                                        var today = new Date();
-                                        var dd = today.getDate();
-                                        var mm = today.getMonth() + 1; //January is 0!
-                                        var yyyy = today.getFullYear();
-                                        if(dd<10) {
-                                            dd = '0'+dd
-                                        }
-                                        if(mm<10) {
-                                            mm = '0'+mm
-                                        }
-                                        today = yyyy + '-' + mm + '-' + dd;
-                                        document.getElementById("return_date").value = today;
-                                    </script>
+                                    <input id="return_date" type="date" value="{{$lending->return_date}}" class="form-control" name="return_date">
                                 </div>
                             </div>
-
-
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit"  class="btn btn-primary">
-                                        انجام عملیات
+                                        ثبت سفارش
                                     </button>
                                 </div>
                             </div>

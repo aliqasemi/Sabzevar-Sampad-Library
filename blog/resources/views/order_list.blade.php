@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">لیست امامت ها</div>
+                    <div class="card-header">لیست سفارشات</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -24,7 +24,7 @@
                             </a>
                             @foreach($data as $d)
                                 @if($d->ban_status == 0)
-                                    <a href="/update-lending-form/{{$d->id}}" class="bg-primary list-group-item list-group-item-action">
+                                    <a href="/order-detail/{{$d->id}}" class="bg-primary list-group-item list-group-item-action">
                                         <span class="row">
                                             <span class="col-lg-4">{{$d->lending_date}}</span>
                                             <span class="col-lg-4">{{$d->return_date}}</span>

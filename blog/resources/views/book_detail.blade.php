@@ -68,7 +68,7 @@
 
                             <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="/book_update_form/{{$book->id}}">ویرایش</a>
 
-                            <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="/book_update/{{$book->id}}" data-toggle="modal" data-target="#deleteModal">حذف</a>
+                            <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;"  data-toggle="modal" data-target="#deleteModal">حذف</a>
 
                             <!--modal for delete-->
                             <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

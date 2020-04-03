@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">جزییات امامت ها</div>
+                    <div class="card-header">لیست امامت ها</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -17,12 +17,12 @@
                         <div class="list-group">
                             <a href="#" class="bg-dark text-white list-group-item list-group-item-action">
                                     <span class="row">
-                                        <span class="col-lg-4 text-primary">تاریخ قرض گرفتن کتاب</span>
+                                        <span class="col-lg-4 text-primary">تاریخ ثبت شفارش کتاب</span>
                                         <span class="col-lg-4 text-warning">تاریخ تحویل</span>
                                         <span class="col-lg-4 text-info">نام کتاب</span>
                                     </span>
                             </a>
-                            @if($lending->ban_status == 1)
+                            @if($lending->ban_status == 0)
                                 <a href="#" class="bg-primary list-group-item list-group-item-action">
                                     <span class="row">
                                         <span class="col-lg-4">{{$lending->lending_date}}</span>
@@ -34,13 +34,13 @@
 
                             <a href="#" class="bg-dark text-white list-group-item list-group-item-action">
                                     <span class="row">
-                                        <span class="col-lg-4 text-primary">وضعیت تحویل</span>
+                                        <span class="col-lg-4 text-primary">وضعیت سفارش</span>
                                         <span class="col-lg-4 text-warning">تاریخ ایجاد عملیات</span>
-                                        <span class="col-lg-4 text-info">نام قرض کننده</span>
+                                        <span class="col-lg-4 text-info">نام درخواست کننده سفارش</span>
                                     </span>
                             </a>
 
-                            @if($lending->ban_status == 1)
+                            @if($lending->ban_status == 0)
                                 <a href="#" class="bg-primary list-group-item list-group-item-action">
                                     <span class="row">
                                         <span class="col-lg-4">
@@ -75,9 +75,9 @@
                                     </span>
                             </a>
 
-                            <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="/lending_update_form/{{$lending->id}}">ویرایش</a>
+                            <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="/lending_update_form/{{$lending->id}}">تایید سفارش</a>
 
-                            <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;"  data-toggle="modal" data-target="#deleteModal">حذف</a>
+                            <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="/lending_update/{{$lending->id}}" data-toggle="modal" data-target="#deleteModal">رد درخواست</a>
 
                             <!--modal for delete-->
                             <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -94,7 +94,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">خیر</button>
-                                            <a type="button" class="btn btn-primary" href="/lending_delete/{{$lending->id}}" >بله حذف کن</a>
+                                            <a type="button" class="btn btn-primary" href="/order_delete/{{$lending->id}}" >بله حذف کن</a>
                                         </div>
                                     </div>
                                 </div>
