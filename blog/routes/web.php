@@ -45,15 +45,23 @@ Route::post('/add-lending','LendingController@add_lending');
 
 Route::get('/lending-list/', 'LendingController@lending_list');
 
+Route::get('/return-list/', 'LendingController@retrun_list');
+
 Route::get('/order-list/', 'LendingController@order_list');
 
 Route::get('/lending-detail/{lending}', 'LendingController@lending_detail');
+
+Route::get('/return-detail/{lending}', 'LendingController@retrun_detail');
 
 Route::get('/order-detail/{lending}', 'LendingController@order_detail');
 
 Route::get('/lending_update_form/{lending}', 'LendingController@update_lending_form');
 
+Route::get('/lending_return/return_form/{lending}', 'LendingController@return_lending_form');
+
 Route::patch('/lending_update/{lending}' , 'lendingController@lending_update') ;
+
+Route::patch('/lending_return/{lending}' , 'lendingController@lending_return') ;
 
 Route::get('/lending_delete/{lending}' , 'LendingController@Lending_delete') ;
 

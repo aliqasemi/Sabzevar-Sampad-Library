@@ -113,6 +113,24 @@
                                                 </div>
                                             </div>
 
+                                            <div class="card">
+                                                <div class="card-header" id="headingThree">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapseThree">
+                                                            لیست امانت های تمام شده
+                                                        </button>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapse5" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                                    <div class="card-body">
+                                                        برای  دیدن لیست مانت های تمام شده دکمه زیر را بفشارید
+                                                        <br>
+                                                        <br>
+                                                        <a href="/return-list" class="btn btn-primary">لیست مانت های تمام شده</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>

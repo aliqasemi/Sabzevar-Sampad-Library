@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">تاییدیه سفارش</div>
+                    <div class="card-header">بازگشت کتاب</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -14,7 +14,7 @@
                             </div>
                         @endif
 
-                        <form method="POST" action="/lending_update/{{$lending->id}}" style="direction: rtl">
+                        <form method="POST" action="/lending_return/{{$lending->id}}" style="direction: rtl">
                             @csrf
                             {{method_field('PATCH')}}
                             <div class="form-group row">
@@ -53,7 +53,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit"  class="btn btn-primary">
-                                        ثبت سفارش
+                                        بازگشت کتاب
                                     </button>
                                 </div>
                             </div>
