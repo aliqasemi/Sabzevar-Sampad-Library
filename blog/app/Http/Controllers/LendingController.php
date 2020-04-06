@@ -113,6 +113,10 @@ class LendingController extends Controller
                 'return_date' =>$request['return_date'] ,
             ]) ;
         }
+        $book = book::find($request['book_id']) ;
+        $book->update([
+            'lended' => 1 ,
+        ]) ;
         return redirect('/home') ;
     }
 

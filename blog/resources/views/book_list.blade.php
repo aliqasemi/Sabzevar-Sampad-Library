@@ -14,6 +14,17 @@
                             </div>
                         @endif
 
+
+                        <div class="list-group">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="نام کتاب را وارد کنید" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button">جست و جو</button>
+                                </div>
+                            </div>
+                        </div>
+
+
                         <div class="list-group">
                             <a href="#" class="bg-dark text-white list-group-item list-group-item-action">
                                     <span class="row">
