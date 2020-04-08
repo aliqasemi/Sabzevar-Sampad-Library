@@ -29,6 +29,8 @@ Route::post('/add-book', 'BookController@add_book');
 
 Route::get('/book_list' , 'BookController@book_list') ;
 
+Route::get('/book_data' , 'BookController@any_data') ;
+
 Route::get('/book-detail/{book}' , 'BookController@book_detail') ;
 
 Route::get('/book_delete/{book}' , 'BookController@book_delete') ;

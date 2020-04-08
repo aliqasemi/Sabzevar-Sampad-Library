@@ -7,10 +7,11 @@ use App\Http\Requests\bookRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-
+use Yajra\DataTables\DataTables ;
 class BookController extends Controller
 {
     //
+
 
     public function add_book_form(){
         return view('add_book_form') ;
@@ -30,10 +31,14 @@ class BookController extends Controller
 
     }
 
-    public function book_list(){
-        $data = book::get() ;
-        return view('book_list' , compact('data')) ;
+    public function any_data(){
+        return DataTables::of(book::query())->make(true) ;
     }
+
+    public function book_list(){
+        return view('book_list') ;
+    }
+
 
     public function book_detail(book $book){
         return view('book_detail' , compact('book')) ;

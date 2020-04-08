@@ -89,6 +89,7 @@
       <path value="$PROJECT_DIR$/blog/vendor/symfony/polyfill-iconv" />
       <path value="$PROJECT_DIR$/blog/vendor/symfony/event-dispatcher-contracts" />
       <path value="$PROJECT_DIR$/blog/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/blog/vendor/yajra/laravel-datatables-oracle" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

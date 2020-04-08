@@ -112,6 +112,7 @@
       <path value="$PROJECT_DIR$/blog/vendor/symfony/polyfill-iconv" />
       <path value="$PROJECT_DIR$/blog/vendor/symfony/event-dispatcher-contracts" />
       <path value="$PROJECT_DIR$/blog/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/blog/vendor/yajra/laravel-datatables-oracle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1YGFohlWw4YDDSBwA7USzeMNBns" />
@@ -148,7 +149,7 @@
       <workItem from="1583831433925" duration="26462000" />
       <workItem from="1584115152199" duration="4287000" />
       <workItem from="1585317876253" duration="30324000" />
-      <workItem from="1586069765095" duration="9395000" />
+      <workItem from="1586069765095" duration="24393000" />
     </task>
     <servers />
   </component>

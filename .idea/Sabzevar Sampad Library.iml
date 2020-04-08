@@ -93,6 +93,7 @@
       <excludeFolder url="file://$MODULE_DIR$/blog/vendor/tijsverkoyen/css-to-inline-styles" />
       <excludeFolder url="file://$MODULE_DIR$/blog/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/blog/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/blog/vendor/yajra/laravel-datatables-oracle" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

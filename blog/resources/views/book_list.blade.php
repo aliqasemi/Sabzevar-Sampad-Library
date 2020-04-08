@@ -1,47 +1,73 @@
 @extends('layouts.app')
 @if(Auth::check())
 @section('content')
+    <style>
+
+    </style>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">لیست کتاب ها</div>
-
                     <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-
-
                         <div class="list-group">
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="نام کتاب را وارد کنید" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button">جست و جو</button>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="list-group">
-                            <a href="#" class="bg-dark text-white list-group-item list-group-item-action">
-                                    <span class="row">
-                                        <span class="col-lg-4 text-info">نام کتاب</span>
-                                        <span class="col-lg-4 text-primary">نام نویسنده</span>
-                                        <span class="col-lg-4 text-warning">موضوع کتاب</span>
-                                    </span>
-                            </a>
-                            @foreach($data as $d)
-                                <a href="/book-detail/{{$d->id}}" class="bg-primary list-group-item list-group-item-action">
-                                    <span class="row">
-                                        <span class="col-lg-4">{{$d->name}}</span>
-                                        <span class="col-lg-4">{{$d->author}}</span>
-                                        <span class="col-lg-4">{{$d->subject}}</span>
-                                    </span>
-                                </a>
-                            @endforeach
+                            <table class="table table-hover" id="table">
+                                <thead class="bg-dark">
+                                <tr>
+                                    <th class="text-primary">موضوع کتاب</th>
+                                    <th class="text-warning">نام کتاب</th>
+                                    <th class="text-info">نام نویسنده</th>
+                                    <th class="text-info">مشاهده جزییات</th>
+                                </tr>
+                                </thead>
+                            </table>
+                            <script>
+                                $(function() {
+                                    $('#table').DataTable({
+                                        processing: true,
+                                        serverSide: true,
+                                        ajax: '{{ url('book_data') }}',
+                                        columns: [
+                                            { data: 'name', name: 'name' },
+                                            { data: 'author', name: 'author' },
+                                            { data: 'subject', name: 'subject' },
+                                            { data: 'id', render: function(data){
+                                                        data = '<a href="/book-detail/' + data + '">     جزییات            </a>';
+                                                    return data;
+                                            } },
+                                        ] ,
+                                        language:{
+                                            "sEmptyTable":     "هیچ داده‌ای در جدول وجود ندارد",
+                                            "sInfo":           "نمایش _START_ تا _END_ از _TOTAL_ ردیف",
+                                            "sInfoEmpty":      "نمایش 0 تا 0 از 0 ردیف",
+                                            "sInfoFiltered":   "(فیلتر شده از _MAX_ ردیف)",
+                                            "sInfoPostFix":    "",
+                                            "sInfoThousands":  ",",
+                                            "sLengthMenu":     "     _MENU_ ",
+                                            "sLoadingRecords": "در حال بارگزاری...",
+                                            "sProcessing":     "در حال پردازش...",
+                                            "sSearch":         "",
+                                            "sZeroRecords":    "رکوردی با این مشخصات پیدا نشد",
+                                            "oPaginate": {
+                                                "sFirst":    "برگه‌ی نخست",
+                                                "sLast":     "برگه‌ی آخر",
+                                                "sNext":     "بعدی",
+                                                "sPrevious": "قبلی"
+                                            },
+                                            "oAria": {
+                                                "sSortAscending":  ": فعال سازی نمایش به صورت صعودی",
+                                                "sSortDescending": ": فعال سازی نمایش به صورت نزولی"
+                                            }
+                                        }
+                                    });
+                                });
+                                $(document).ready(function(){
+                                    $('input').addClass('form-control') ;
+                                    $('input').attr("placeholder" , "عبارت خود را جستو جو کنید") ;
+                                    $('input').css("text-align" , "center") ;
+                                    $('select').addClass('form-control') ;
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>

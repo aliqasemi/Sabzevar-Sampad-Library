@@ -20,6 +20,11 @@
     <link href="{{URL::asset('CJ/css/bootstrap.css')}}" rel="stylesheet">
     <link href="{{URL::asset('CJ/css/style.css')}}" rel="stylesheet">
     <link href="{{URL::asset('CJ/css/aos.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('CJ/css/dataTables.min.css')}}" rel="stylesheet">
+    <script src="{{URL::asset('CJ/js/jquery.min.js')}}"></script>
+    <script src="{{URL::asset('CJ/js/bootstrap.js')}}"></script>
+    <script src={{URL::asset('CJ/js/dataTables.min.js')}}></script>
+
 </head>
 <body style="font-family: iransans ; background-color: #0b51c5">
 <div class="container-fluid" style="">
@@ -146,11 +151,10 @@
     AOS.init() ;
 </script>
 <link href="{{URL::asset('CJ/css/style.css')}}" rel="stylesheet">
-<script src="{{URL::asset('CJ/js/jquery.min.js')}}"></script>
-<script src="{{URL::asset('CJ/js/bootstrap.js')}}"></script>
 <script src={{URL::asset('CJ/js/bootstrap-datepicker.js')}}></script>
 <script src={{URL::asset('CJ/js/bootstrap-datepicker.fa.js')}}></script>
 <script src={{URL::asset('CJ/js/script.js')}}></script>
+
 <script>
     $("#datepicker").datepicker({
         changeMonth: true,
