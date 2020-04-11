@@ -26,9 +26,9 @@
     <script src={{URL::asset('CJ/js/dataTables.min.js')}}></script>
 
 </head>
-<body style="font-family: iransans ; background-color: #0b51c5">
-<div class="container-fluid" style="">
-    <div class="row bg-light" style="text-align: center">
+<body style="font-family: iransans ;  background: rgba(78,76,68,0.87) ;">
+<div class="container-fluid" style=" background: rgba(78,76,68,0.87) ;">
+    <div class="row " style="text-align: center ;  background: rgba(78,76,68,0.87) ;">
 
 
 
@@ -90,6 +90,8 @@
 
 </main>
 
+
+<!--
 <footer>
     <div class="footer" id="footer">
         <div class="container">
@@ -125,15 +127,15 @@
                     </div>
                 </div>
             </div>
-            <!--/.row-->
-        </div>
-        <!--/.container-->
-    </div>
-    <!--/.footer-->
 
-    <!--/.footer-bottom-->
+</div>
+
+</div>
+
+
+
 </footer>
-
+-->
 </body>
 <script>
     //Shrink header on scroll
