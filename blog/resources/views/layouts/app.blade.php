@@ -45,10 +45,32 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav" style="text-align: center">
                         <ul class="navbar-nav">
+
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="/">صفحه اصلی</a>
                             </li>
+
                             @if(Auth::check())
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" data-target="#register" href="#">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" data-target="#register" href="/home">داشبورد</a>
+                                </li>
+
+
+                                @can('isAdmin')
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" data-target="#register" href="/register">ثبت نام</a>
+                                    </li>
+                                @elsecan('isSuperAdmin')
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" data-target="#register" href="/register">ثبت نام</a>
+                                    </li>
+                                @endcan
+
                                 <li class="nav-item">
                                     <a  class="nav-link text-white" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
@@ -61,14 +83,7 @@
                                     </form>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a class="nav-link text-white" data-target="#register" href="/home">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</a>
-                                </li>
-                                @can('isAdmin')
-                                    <li class="nav-item">
-                                        <a class="nav-link text-white" data-target="#register" href="/register">ثبت نام</a>
-                                    </li>
-                                @endcan
+
                             @else
                                 <li class="nav-item">
                                     <a class="nav-link text-white" data-target="#login" href="/home">ورود</a>

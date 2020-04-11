@@ -30,15 +30,27 @@
         </div>
         <div class="row">
             @if(Auth::check())
-                <div class="col-sm-12">
-                    <div class="card login-register-card">
-                        <div class="card-body">
-                            <h5 class="card-title">ثبت نام</h5>
-                            <p class="card-text">برای ثبت نام، دکمه ثبت نام را انتخاب کنید</p>
-                            <a href="/register" class="btn btn-primary">ثبت نام</a>
+                @can('isSuperAdmin')
+                    <div class="col-sm-12">
+                        <div class="card login-register-card">
+                            <div class="card-body">
+                                <h5 class="card-title">ثبت نام</h5>
+                                <p class="card-text">برای ثبت نام، دکمه ثبت نام را انتخاب کنید</p>
+                                <a href="/register" class="btn btn-primary">ثبت نام</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @elsecan('isAdmin')
+                    <div class="col-sm-12">
+                        <div class="card login-register-card">
+                            <div class="card-body">
+                                <h5 class="card-title">ثبت نام</h5>
+                                <p class="card-text">برای ثبت نام، دکمه ثبت نام را انتخاب کنید</p>
+                                <a href="/register" class="btn btn-primary">ثبت نام</a>
+                            </div>
+                        </div>
+                    </div>
+                @endcan
             @else
                 <div class="col-sm-12">
                     <div class="card login-register-card">
