@@ -23,7 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //book schema
 
-Route::get('/add-book-form', 'BookController@add_book_form');
+Route::get('/add-book-form/', 'BookController@add_book_form');
 
 Route::post('/add-book', 'BookController@add_book');
 
@@ -41,7 +41,7 @@ Route::patch('/book_update/{book}' , 'BookController@book_update') ;
 
 //lending schema
 
-Route::get('/add-lending-form', 'LendingController@add_lending_form');
+Route::get('/add-lending-form/{book}', 'LendingController@add_lending_form');
 
 Route::post('/add-lending','LendingController@add_lending');
 

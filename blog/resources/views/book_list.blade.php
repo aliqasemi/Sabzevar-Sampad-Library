@@ -14,10 +14,11 @@
                             <table class="table table-hover" id="table">
                                 <thead class="bg-dark">
                                 <tr>
-                                    <th class="text-primary">موضوع کتاب</th>
-                                    <th class="text-warning">نام کتاب</th>
-                                    <th class="text-info">نام نویسنده</th>
+                                    <th class="text-primary">نام کتاب</th>
+                                    <th class="text-warning">نام نویسنده</th>
+                                    <th class="text-info">موضوع کتاب</th>
                                     <th class="text-info">مشاهده جزییات</th>
+                                    <th class="text-info">قرض گرفتن کتاب</th>
                                 </tr>
                                 </thead>
                             </table>
@@ -35,6 +36,10 @@
                                                         data = '<a href="/book-detail/' + data + '">     جزییات            </a>';
                                                     return data;
                                             } },
+                                            { data: 'id', render: function(data){
+                                                    data = '<a href="/add-lending-form/' + data + '">     قرض گرفتن کتاب            </a>';
+                                                    return data;
+                                                } },
                                         ] ,
                                         language:{
                                             "sEmptyTable":     "هیچ داده‌ای در جدول وجود ندارد",

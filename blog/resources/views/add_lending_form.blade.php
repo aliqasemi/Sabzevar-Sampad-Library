@@ -22,7 +22,6 @@
 
                                 <div class="col-md-6">
                                     <select class="form-control" id="book_id" name="book_id" required>
-                                        @foreach($books as $book)
                                             @if($book->lended == 1)
                                                 <option value="{{$book->id}}">{{$book->name}} &nbsp;&nbsp;&nbsp;&nbsp; آزاد
                                                 </option>
@@ -30,7 +29,6 @@
                                                  <option disabled value="{{$book->id}}">{{$book->name}} &nbsp;&nbsp;&nbsp;&nbsp; رزرو شده
                                                  </option>
                                             @endif
-                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -99,7 +97,7 @@
                             </div>
 
 
-
+                            @if($book->lended == 1)
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit"  class="btn btn-primary">
@@ -107,7 +105,9 @@
                                     </button>
                                 </div>
                             </div>
-
+                            @else
+                                با عرض پوزش کتاب {{$book->name}} رزرو شده است.
+                            @endif
                             <br>
 
                             @if ($errors->any())
