@@ -20,10 +20,13 @@
     <link href="{{URL::asset('CJ/css/bootstrap.css')}}" rel="stylesheet">
     <link href="{{URL::asset('CJ/css/style.css')}}" rel="stylesheet">
     <link href="{{URL::asset('CJ/css/aos.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('CJ/css/persian-datepicker.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('CJ/css/dataTables.min.css')}}" rel="stylesheet">
     <script src="{{URL::asset('CJ/js/jquery.min.js')}}"></script>
     <script src="{{URL::asset('CJ/js/bootstrap.js')}}"></script>
     <script src={{URL::asset('CJ/js/dataTables.min.js')}}></script>
+    <script src={{URL::asset('CJ/js/persian-datepicker.min.js')}}></script>
+    <script src={{URL::asset('CJ/js/persian-date.min.js')}}></script>
 
 </head>
 <body style="font-family: iransans ;  background: rgba(78,76,68,0.87) ;">

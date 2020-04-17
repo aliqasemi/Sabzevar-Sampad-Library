@@ -20,6 +20,8 @@
       <excludeFolder url="file://$MODULE_DIR$/blog/vendor/filp/whoops" />
       <excludeFolder url="file://$MODULE_DIR$/blog/vendor/fzaninotto/faker" />
       <excludeFolder url="file://$MODULE_DIR$/blog/vendor/hamcrest/hamcrest-php" />
+      <excludeFolder url="file://$MODULE_DIR$/blog/vendor/hekmatinasser/notowo" />
+      <excludeFolder url="file://$MODULE_DIR$/blog/vendor/hekmatinasser/verta" />
       <excludeFolder url="file://$MODULE_DIR$/blog/vendor/jakub-onderka/php-console-color" />
       <excludeFolder url="file://$MODULE_DIR$/blog/vendor/jakub-onderka/php-console-highlighter" />
       <excludeFolder url="file://$MODULE_DIR$/blog/vendor/laravel/framework" />

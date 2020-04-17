@@ -47,20 +47,28 @@
                             <div class="form-group row">
                                 <label for="lending_date" class="col-md-4 col-form-label text-md-right"> تاریخ قرض گرفتن کتاب</label>
                                 <div class="col-md-6">
-                                    <input id="lending_date" type="date" class="form-control" name="lending_date">
-                                    <script type = "text/javascript">
-                                        var today = new Date();
-                                        var dd = today.getDate();
-                                        var mm = today.getMonth() + 1; //January is 0!
-                                        var yyyy = today.getFullYear();
-                                        if(dd<10) {
-                                            dd = '0'+dd
-                                        }
-                                        if(mm<10) {
-                                            mm = '0'+mm
-                                        }
-                                        today = yyyy + '-' + mm + '-' + dd;
-                                        document.getElementById("lending_date").value = today;
+                                    <input id="lending_date" class="form-control" name="lending_date">
+                                    <script type="text/javascript">
+                                        $(document).ready(function() {
+                                            $("#lending_date").pDatepicker(
+                                                {
+                                                    altField: '#mydate',
+                                                    observer: true,
+                                                    responsive : true ,
+                                                    altFormat: "YYYY/MM/DD",
+                                                    format: 'YYYY-MM-DD',
+                                                    initialValueType: 'persian',
+                                                    autoClose: true,
+                                                    maxDate: 'today',
+                                                    initialValue : true ,
+                                                    calendar:{
+                                                        persian: {
+                                                            locale: 'en'
+                                                        }
+                                                    } ,
+                                                }
+                                            );
+                                        });
                                     </script>
                                 </div>
                             </div>
@@ -72,30 +80,38 @@
                                 <label for="return_date" class="col-md-4 col-form-label text-md-right">تاریخ بازگشت کتاب</label>
 
                                 <div class="col-md-6">
-                                    <input id="return_date" type="date" class="form-control" name="return_date">
-                                    <script type = "text/javascript">
-                                        var today = new Date();
-                                        var dd = today.getDate();
-                                        var mm = today.getMonth() + 1; //January is 0!
-                                        var yyyy = today.getFullYear();
-                                        if(dd<10) {
-                                            dd = '0'+dd
-                                        }
-                                        if(mm<10) {
-                                            mm = '0'+mm
-                                        }
-                                        today = yyyy + '-' + mm + '-' + dd;
-                                        var endDate = new Date();
-                                        endDate.setDate(today.getDate()+14);
-                                        var day = endDate.getDate();
-                                        var month = endDate.getMonth() + 1 ;
-                                        var year = endDate.getFullYear();
-                                        endDate = year + '-' + month + '-' + day ;
-                                        document.getElementById("return_date").value = endDate;
+                                    <input id="return_date" class="form-control" name="return_date">
+                                    <script type="text/javascript">
+                                        $(document).ready(function() {
+                                            var today = new Date();
+                                            var startDate = new Date();
+                                            var endDate = new Date();
+                                            startDate.setDate(today.getDate()) ;
+                                            endDate.setDate(today.getDate()+14);
+                                            $("#return_date").pDatepicker(
+                                                {
+                                                    altField: '#mydate',
+                                                    observer: true,
+                                                    responsive : true ,
+                                                    altFormat: "YYYY-MM-DD",
+                                                    format: 'YYYY-MM-DD',
+                                                    initialValueType: 'georgian',
+                                                    autoClose: true,
+                                                    minDate : startDate ,
+                                                    maxDate : endDate ,
+                                                    showButtonPanel: true ,
+                                                    calendar:{
+                                                        persian: {
+                                                            locale: 'en'
+                                                        }
+                                                    } ,
+                                                }
+                                            );
+                                        });
                                     </script>
+
                                 </div>
                             </div>
-
 
                             @if($book->lended == 1)
                             <div class="form-group row mb-0">
