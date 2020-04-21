@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48b476cd-7c5c-4641-bb10-eccb0be1c552" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Sabzevar Sampad Library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Sabzevar Sampad Library.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/app/Http/Requests/lendingRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/Http/Requests/lendingRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/blog/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/public/CJ/js/bootstrap-datepicker.fa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/public/CJ/js/bootstrap-datepicker.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/resources/views/add_lending_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/views/add_lending_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/resources/views/lending_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/views/lending_list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/resources/views/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/views/test.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +14,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/blog/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -134,14 +123,13 @@
   <component name="ProjectId" id="1YGFohlWw4YDDSBwA7USzeMNBns" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="B:/7thSemester/Web Engineering/4/personalPage" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../7thSemester/Web Engineering/4/personalPage" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -168,12 +156,15 @@
       <workItem from="1586069765095" duration="26464000" />
       <workItem from="1586614557418" duration="10363000" />
       <workItem from="1587015580372" duration="14970000" />
-      <workItem from="1587060687003" duration="4894000" />
+      <workItem from="1587060687003" duration="14773000" />
+      <workItem from="1587402130743" duration="8000" />
+      <workItem from="1587402693829" duration="38000" />
+      <workItem from="1587402783286" duration="7148000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="499" y="170" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1587054563474">
@@ -188,17 +179,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="730" y="304" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1587054536790" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1587060727867">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1587402130609">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587060727867" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587402130609" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1583397068699">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1583397068699" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1585587975293">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1587456054267">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585587975293" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1587456054267" />
   </component>
 </project>

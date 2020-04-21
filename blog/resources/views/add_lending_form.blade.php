@@ -50,17 +50,23 @@
                                     <input id="lending_date" class="form-control" name="lending_date">
                                     <script type="text/javascript">
                                         $(document).ready(function() {
+                                            var today = new Date();
+                                            var startDate = new Date();
+                                            var endDate = new Date();
+                                            startDate.setDate(today.getDate()) ;
+                                            endDate.setDate(today.getDate()+14);
                                             $("#lending_date").pDatepicker(
                                                 {
                                                     altField: '#mydate',
                                                     observer: true,
                                                     responsive : true ,
-                                                    altFormat: "YYYY/MM/DD",
+                                                    altFormat: "YYYY-MM-DD",
                                                     format: 'YYYY-MM-DD',
-                                                    initialValueType: 'persian',
+                                                    initialValueType: 'georgian',
                                                     autoClose: true,
-                                                    maxDate: 'today',
-                                                    initialValue : true ,
+                                                    minDate : startDate ,
+                                                    maxDate : endDate ,
+                                                    showButtonPanel: true ,
                                                     calendar:{
                                                         persian: {
                                                             locale: 'en'
@@ -69,6 +75,8 @@
                                                 }
                                             );
                                         });
+
+
                                     </script>
                                 </div>
                             </div>
@@ -107,6 +115,42 @@
                                                     } ,
                                                 }
                                             );
+                                        });
+                                        $(document).ready(function () {
+                                            $(".header-row > .header-row-cell:nth-child(1)").text("ش");
+                                            $(".header-row > .header-row-cell:nth-child(2)").text("ی");
+                                            $(".header-row > .header-row-cell:nth-child(3)").text("د");
+                                            $(".header-row > .header-row-cell:nth-child(4)").text("س");
+                                            $(".header-row > .header-row-cell:nth-child(5)").text("چ");
+                                            $(".header-row > .header-row-cell:nth-child(6)").text("پ");
+                                            $(".header-row > .header-row-cell:nth-child(7)").text("ج");
+                                            if ($(".pwt-btn-switch").text().includes("Ordibehesht"))
+                                                $(".pwt-btn-switch").text($(".pwt-btn-switch").text().replace("Ordibehesht" , "اردیبهشت").replace("Ordibehesht" , " ").replace("1399" , " ").replace("۱۳۹۹ اردیبهشت  اردیبهشت" , "۱۳۹۹ اردیبهشت")) ;
+                                            else if($(".pwt-btn-switch").text().includes("Khordad"))
+                                                $(".pwt-btn-switch").text($(".pwt-btn-switch").text().replace("Khordad" , "خرداد").replace("Khordad" , " ").replace("1399" , " ").replace("۱۳۹۹ خرداد  خرداد" , "۱۳۹۹ خرداد")) ;
+                                            else if($(".pwt-btn-switch").text().includes("Farvardin"))
+                                                $(".pwt-btn-switch").text($(".pwt-btn-switch").text().replace("ّFarvardin" , "قروردین").replace("Farvardin" , " ").replace("1399" , " ").replace("۱۳۹۹ فروردین  فروردین" , "۱۳۹۹ فروردین")) ;
+                                            else if($(".pwt-btn-switch").text().includes("Tir"))
+                                                $(".pwt-btn-switch").text($(".pwt-btn-switch").text().replace("Tir" , "تیر").replace("Tir" , " ").replace("1399" , " ").replace("۱۳۹۹ تیر  تیر" , "۱۳۹۹ تیر")) ;
+                                            else if($(".pwt-btn-switch").text().includes("Mordad"))
+                                                $(".pwt-btn-switch").text($(".pwt-btn-switch").text().replace("Mordad" , "مرداد").replace("Mordad" , " ").replace("1399" , " ").replace("۱۳۹۹ مرداد  مرداد" , "۱۳۹۹ مرداد")) ;
+                                            else if($(".pwt-btn-switch").text().includes("Shahrivar"))
+                                                $(".pwt-btn-switch").text($(".pwt-btn-switch").text().replace("Shahrivar" , "شهریور").replace("Shahrivar" , " ").replace("1399" , " ").replace("۱۳۹۹ شهریور  شهریور" , "۱۳۹۹ شهریور")) ;
+                                            else if($(".pwt-btn-switch").text().includes("Mehr"))
+                                                $(".pwt-btn-switch").text($(".pwt-btn-switch").text().replace("Mehr" , "مهر").replace("Mehr" , " ").replace("1399" , " ").replace("۱۳۹۹ مهر  مهر" , "۱۳۹۹ مهر")) ;
+                                            else if($(".pwt-btn-switch").text().includes("Aban"))
+                                                $(".pwt-btn-switch").text($(".pwt-btn-switch").text().replace("Aban" , "آبان").replace("Aban" , " ").replace("1399" , " ").replace("۱۳۹۹ آبان  آبان" , "۱۳۹۹ آبان")) ;
+                                            else if($(".pwt-btn-switch").text().includes("Azar"))
+                                                $(".pwt-btn-switch").text($(".pwt-btn-switch").text().replace("Azar" , "آذر").replace("Azar" , " ").replace("1399" , " ").replace("۱۳۹۹ آذر  آذر" , "۱۳۹۹ آذر")) ;
+                                            else if($(".pwt-btn-switch").text().includes("Dey"))
+                                                $(".pwt-btn-switch").text($(".pwt-btn-switch").text().replace("Dey" , "دی").replace("Dey" , " ").replace("1399" , " ").replace("۱۳۹۹ دی  دی" , "۱۳۹۹ دی")) ;
+                                            else if($(".pwt-btn-switch").text().includes("Bahman"))
+                                                $(".pwt-btn-switch").text($(".pwt-btn-switch").text().replace("Bahman" , "بهمن").replace("Bahman" , " ").replace("1399" , " ").replace("۱۳۹۹ بهمن  بهمن" , "۱۳۹۹ بهمن")) ;
+                                            else if($(".pwt-btn-switch").text().includes("Esfand"))
+                                                $(".pwt-btn-switch").text($(".pwt-btn-switch").text().replace("Esfand" , "اسفند").replace("Esfand" , " ").replace("1399" , " ").replace("۱۳۹۹ اسفند  اسفند" , "۱۳۹۹ اسفند")) ;
+                                            else {
+                                                //nothing to do
+                                            }
                                         });
                                     </script>
 

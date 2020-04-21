@@ -24,6 +24,7 @@
                             </a>
                             @foreach($data as $d)
                                 @if($d->ban_status == 1)
+
                                     <a href="/lending-detail/{{$d->id}}" class="bg-primary list-group-item list-group-item-action">
                                         <span class="row">
                                             <span class="col-lg-4">{{$d->lending_date}}</span>
