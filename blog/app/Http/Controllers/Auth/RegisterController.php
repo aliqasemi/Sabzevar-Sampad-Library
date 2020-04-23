@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Yajra\DataTables\DataTables;
 
 class RegisterController extends Controller
 {
@@ -82,4 +85,23 @@ class RegisterController extends Controller
             'user_type' => $data['user_type']
         ]);
     }
+
+    protected function User_list(){
+            return view('user_list') ;
+    }
+
+    protected function any_data(){
+        return DataTables::of(User::where('user_type','admin')->orWhere('user_type','user'))->make(true) ;
+    }
+
+    protected function User_detail(User $user){
+        return view('user_detail' , compact('user')) ;
+    }
+
+    public function user_delete(User $user){
+        $user->delete() ;
+        return redirect('/user_list') ;
+    }
+
+
 }

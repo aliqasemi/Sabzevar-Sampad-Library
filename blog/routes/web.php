@@ -68,3 +68,18 @@ Route::patch('/lending_return/{lending}' , 'lendingController@lending_return') ;
 Route::get('/lending_delete/{lending}' , 'LendingController@Lending_delete') ;
 
 Route::get('order_delete/{lending}' , 'LendingController@order_delete') ;
+
+
+//User schema
+
+Route::get('/user_list' , 'Auth\RegisterController@User_list') ;
+
+Route::get('/user_data' , 'Auth\RegisterController@any_data') ;
+
+Route::get('/user-detail/{user}' , 'Auth\RegisterController@User_detail') ;
+
+Route::get('/user_update_form/{user}' , 'Auth\RegisterController@update_user_form') ;
+
+Route::patch('/user_update/{book}' , 'Auth\RegisterController@user_update') ;
+
+Route::get('/user_delete/{user}' , 'Auth\RegisterController@user_delete') ;

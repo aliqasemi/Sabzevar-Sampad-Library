@@ -73,6 +73,26 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <div class="card">
+                                                <div class="card-header" id="headingOne">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseSelf" aria-expanded="false"  aria-controls="collapseOne">
+                                                            مشخصات خود
+                                                        </button>
+                                                    </h5>
+                                                </div>
+
+                                                <div id="collapseSelf" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                                    <div class="card-body">
+                                                        برای دیدن مشخصات خودتون دکمه زیر را بفشارید
+                                                        <br>
+                                                        <br>
+                                                        <a href="/user-detail/{{ Auth::user()->id }}" class="btn btn-primary">مشخصات</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="card">
@@ -129,6 +149,27 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <div class="card">
+                                                <div class="card-header" id="headingOne">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseUser" aria-expanded="false" aria-controls="collapseOne">
+                                                            لیست کاربران
+                                                        </button>
+                                                    </h5>
+                                                </div>
+
+                                                <div id="collapseUser" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                                    <div class="card-body">
+                                                        برای دیدن لیست کاربران دکمه زیر را بفشارید
+                                                        <br>
+                                                        <br>
+                                                        <a href="/user_list" class="btn btn-primary">لیست کاربران</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
 
                                         </div>
                                     </div>
@@ -189,6 +230,26 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <div class="card">
+                                                <div class="card-header" id="headingOne">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseSelf" aria-expanded="false" aria-controls="collapseOne">
+                                                            مشخصات خود
+                                                        </button>
+                                                    </h5>
+                                                </div>
+
+                                                <div id="collapseSelf" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                                    <div class="card-body">
+                                                        برای دیدن مشخصات خودتون دکمه زیر را بفشارید
+                                                        <br>
+                                                        <br>
+                                                        <a href="/user-detail/{{ Auth::user()->id }}" class="btn btn-primary">مشخصات</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="card">
@@ -246,6 +307,25 @@
                                                 </div>
                                             </div>
 
+                                            <div class="card">
+                                                <div class="card-header" id="headingOne">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseUser" aria-expanded="true" aria-controls="collapseOne">
+                                                            لیست کاربران
+                                                        </button>
+                                                    </h5>
+                                                </div>
+
+                                                <div id="collapseUser" class="collapse show" aria-labelledby="headingOne" aria-expanded="false" data-parent="#accordion">
+                                                    <div class="card-body">
+                                                        برای دیدن لیست کاربران دکمه زیر را بفشارید
+                                                        <br>
+                                                        <br>
+                                                        <a href="/user_list" class="btn btn-primary">لیست کاربران</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -264,6 +344,25 @@
                                             <br>
                                             <br>
                                             <a href="/book_list" class="btn btn-primary">قرض کردن کتاب</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseSelf" aria-expanded="true" aria-controls="collapseOne">
+                                                مشخصات خود
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapseSelf" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                        <div class="card-body">
+                                            برای دیدن مشخصات خودتون دکمه زیر را بفشارید
+                                            <br>
+                                            <br>
+                                            <a href="/user-detail/{{ Auth::user()->id }}" class="btn btn-primary">مشخصات</a>
                                         </div>
                                     </div>
                                 </div>
