@@ -330,42 +330,109 @@
                                     </div>
                                 </div>
                             @else
-                                <div class="card">
-                                    <div class="card-header" id="headingTwo">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                قرض کتاب
-                                            </button>
-                                        </h5>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                        <div class="card-body">
-                                            برای قرض گرفتن(رزرو) کتاب دکمه زیر را بفشارید:
-                                            <br>
-                                            <br>
-                                            <a href="/book_list" class="btn btn-primary">قرض کردن کتاب</a>
+                                <div class="row">
+
+                                    <div class="col-lg-6">
+
+                                        <div class="card">
+                                            <div class="card-header" id="headingTwo">
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                        قرض کتاب
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    برای قرض گرفتن(رزرو) کتاب دکمه زیر را بفشارید:
+                                                    <br>
+                                                    <br>
+                                                    <a href="/book_list" class="btn btn-primary">قرض کردن کتاب</a>
+                                                </div>
+                                            </div>
                                         </div>
+
+                                        <div class="card">
+                                            <div class="card-header" id="headingTwo">
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseWaiting" aria-expanded="false" aria-controls="collapseWaiting">
+                                                        سفارش های در انتظار تایید
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseWaiting" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    برای دیدن سفارش های در انتظار تایید دکمه زیر را بفشارید:
+                                                    <br>
+                                                    <br>
+                                                    <a href="/order_customer/{{ Auth::user()->id }}" class="btn btn-primary">سفارش های در انتظار تایید</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card">
+                                            <div class="card-header" id="headingTwo">
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseLending" aria-expanded="false" aria-controls="collapseLending">
+                                                        لیست امانت ها
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseLending" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    برای دیدن لیست امانت ها دکمه زیر را بفشارید:
+                                                    <br>
+                                                    <br>
+                                                    <a href="/lending_customer/{{ Auth::user()->id }}" class="btn btn-primary">لیست امانت ها</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-lg-6">
+
+                                        <div class="card">
+                                            <div class="card-header" id="headingOne">
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseSelf" aria-expanded="true" aria-controls="collapseOne">
+                                                        مشخصات خود
+                                                    </button>
+                                                </h5>
+                                            </div>
+
+                                            <div id="collapseSelf" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    برای دیدن مشخصات خودتون دکمه زیر را بفشارید
+                                                    <br>
+                                                    <br>
+                                                    <a href="/user-detail/{{ Auth::user()->id }}" class="btn btn-primary">مشخصات</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card">
+                                            <div class="card-header" id="headingTwo">
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseReturn" aria-expanded="false" aria-controls="collapseReturn">
+                                                        لیست امانت های تمام شده
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseReturn" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    برای دیدن لیست امانت های تمام شده کتاب دکمه زیر را بفشارید:
+                                                    <br>
+                                                    <br>
+                                                    <a href="/return_customer/{{ Auth::user()->id }}" class="btn btn-primary"> امانت های تمام شده</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
                                     </div>
                                 </div>
 
-                                <div class="card">
-                                    <div class="card-header" id="headingOne">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseSelf" aria-expanded="true" aria-controls="collapseOne">
-                                                مشخصات خود
-                                            </button>
-                                        </h5>
-                                    </div>
-
-                                    <div id="collapseSelf" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                        <div class="card-body">
-                                            برای دیدن مشخصات خودتون دکمه زیر را بفشارید
-                                            <br>
-                                            <br>
-                                            <a href="/user-detail/{{ Auth::user()->id }}" class="btn btn-primary">مشخصات</a>
-                                        </div>
-                                    </div>
-                                </div>
                             @endif
                         </div>
                 </div>

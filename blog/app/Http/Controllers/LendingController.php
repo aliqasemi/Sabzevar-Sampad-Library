@@ -62,6 +62,36 @@ class LendingController extends Controller
         return view('order_list' , compact('data')) ;
     }
 
+    public function user_order_list (User $user)
+    {
+        $data = lending::join('users' , function ($join){
+           $join->on('users.id' , '=' , 'lendings.user_id');
+        })
+            ->select('lendings.*')
+            ->get()->where('ban_status' , 0)->where('user_id' , $user->id);
+        return view('order_list' , compact('data')) ;
+    }
+
+    public function user_lending_list (User $user)
+    {
+        $data = lending::join('users' , function ($join){
+            $join->on('users.id' , '=' , 'lendings.user_id');
+        })
+            ->select('lendings.*')
+            ->get()->where('ban_status' , 1)->where('user_id' , $user->id);
+        return view('lending_list' , compact('data')) ;
+    }
+
+    public function user_return_list (User $user)
+    {
+        $data = lending::join('users' , function ($join){
+            $join->on('users.id' , '=' , 'lendings.user_id');
+        })
+            ->select('lendings.*')
+            ->get()->where('ban_status' , 2)->where('user_id' , $user->id);
+        return view('return_list' , compact('data')) ;
+    }
+
     public function lending_detail(lending $lending){
         return view('lending_detail' , compact('lending')) ;
     }

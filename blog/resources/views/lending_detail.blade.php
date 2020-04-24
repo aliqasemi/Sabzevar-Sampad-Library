@@ -74,33 +74,64 @@
                                         <span class="col-lg-4"></span>
                                     </span>
                             </a>
+                            
+                            @can('isAdmin')
+                                <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="/lending_update_form/{{$lending->id}}">ویرایش</a>
 
-                            <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="/lending_update_form/{{$lending->id}}">ویرایش</a>
+                                <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;"  data-toggle="modal" data-target="#deleteModal">حذف</a>
 
-                            <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;"  data-toggle="modal" data-target="#deleteModal">حذف</a>
-
-                            <!--modal for delete-->
-                            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header" style="direction: rtl">
-                                            <h5 class="modal-title" id="exampleModalLabel">حذف سفارش</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="direction: ltr">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body" style="direction: rtl">
-                                            آیا از حذف سفارش با شماره {{$lending->id}} به نام {{\App\user::find($lending->user_id)->first_name}}  {{\App\user::find($lending->user_id)->last_name}} به نام کتاب {{\App\book::find($lending->book_id)->name}} مطمين هستید؟
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">خیر</button>
-                                            <a type="button" class="btn btn-primary" href="/lending_delete/{{$lending->id}}" >بله حذف کن</a>
+                                <!--modal for delete-->
+                                <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header" style="direction: rtl">
+                                                <h5 class="modal-title" id="exampleModalLabel">حذف سفارش</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="direction: ltr">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body" style="direction: rtl">
+                                                آیا از حذف سفارش با شماره {{$lending->id}} به نام {{\App\user::find($lending->user_id)->first_name}}  {{\App\user::find($lending->user_id)->last_name}} به نام کتاب {{\App\book::find($lending->book_id)->name}} مطمين هستید؟
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">خیر</button>
+                                                <a type="button" class="btn btn-primary" href="/lending_delete/{{$lending->id}}" >بله حذف کن</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="/lending_return/return_form/{{$lending->id}}">بازگرداندن کتاب</a>
+                                <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="/lending_return/return_form/{{$lending->id}}">بازگرداندن کتاب</a>
+
+                            @elsecan('isSuperAdmin')
+                                <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="/lending_update_form/{{$lending->id}}">ویرایش</a>
+
+                                <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;"  data-toggle="modal" data-target="#deleteModal">حذف</a>
+
+                                <!--modal for delete-->
+                                <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header" style="direction: rtl">
+                                                <h5 class="modal-title" id="exampleModalLabel">حذف سفارش</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="direction: ltr">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body" style="direction: rtl">
+                                                آیا از حذف سفارش با شماره {{$lending->id}} به نام {{\App\user::find($lending->user_id)->first_name}}  {{\App\user::find($lending->user_id)->last_name}} به نام کتاب {{\App\book::find($lending->book_id)->name}} مطمين هستید؟
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">خیر</button>
+                                                <a type="button" class="btn btn-primary" href="/lending_delete/{{$lending->id}}" >بله حذف کن</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="/lending_return/return_form/{{$lending->id}}">بازگرداندن کتاب</a>
+
+                            @endcan
 
                         </div>
                     </div>

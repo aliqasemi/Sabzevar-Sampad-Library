@@ -3,11 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="48b476cd-7c5c-4641-bb10-eccb0be1c552" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/app/Http/Controllers/LendingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/Http/Controllers/LendingController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/resources/views/lending_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/views/lending_detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/resources/views/order_details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/views/order_details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/resources/views/update_lending_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/views/update_lending_form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database_schema.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/database_schema.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +162,7 @@
       <workItem from="1587060687003" duration="14773000" />
       <workItem from="1587402130743" duration="8000" />
       <workItem from="1587402693829" duration="38000" />
-      <workItem from="1587402783286" duration="26881000" />
+      <workItem from="1587402783286" duration="36075000" />
     </task>
     <servers />
   </component>

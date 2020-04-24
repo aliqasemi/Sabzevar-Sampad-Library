@@ -83,3 +83,9 @@ Route::get('/user_update_form/{user}' , 'Auth\RegisterController@update_user_for
 Route::patch('/user_update/{book}' , 'Auth\RegisterController@user_update') ;
 
 Route::get('/user_delete/{user}' , 'Auth\RegisterController@user_delete') ;
+
+Route::get('/order_customer/{user}' , 'LendingController@user_order_list') ;
+
+Route::get('/lending_customer/{user}' , 'LendingController@user_lending_list') ;
+
+Route::get('/return_customer/{user}' , 'LendingController@user_return_list') ;

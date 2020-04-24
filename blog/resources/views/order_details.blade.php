@@ -74,10 +74,12 @@
                                         <span class="col-lg-4"></span>
                                     </span>
                             </a>
-
+                            @can('isAdmin')
                             <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="/lending_update_form/{{$lending->id}}">تایید سفارش</a>
-
-                            <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="/lending_update/{{$lending->id}}" data-toggle="modal" data-target="#deleteModal">رد درخواست</a>
+                            @elsecan('isSuperAdmin')
+                             <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="/lending_update_form/{{$lending->id}}">تایید سفارش</a>
+                            @endcan
+                             <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="/lending_update/{{$lending->id}}" data-toggle="modal" data-target="#deleteModal">رد درخواست</a>
 
                             <!--modal for delete-->
                             <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
