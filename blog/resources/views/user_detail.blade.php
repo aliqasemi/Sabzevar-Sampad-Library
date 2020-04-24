@@ -79,29 +79,36 @@
                             <!--
                             <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="/user_update_form/{{$user->id}}">ویرایش</a>
                             !-->
+                            <a class="btn btn-black bg-info text-white" href="/order_customer/{{$user->id}}" style="margin-top: 20px ;">لیست سفارشات ثبت نشده</a>
+                            <a class="btn btn-black bg-info text-white" href="/lending_customer/{{$user->id}}" style="margin-top: 20px ;">لیست امانت ها</a>
+                            <a class="btn btn-black bg-info text-white" href="/return_customer/{{$user->id}}" style="margin-top: 20px ;">لیست امانت های تمام شده</a>
                             <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;"  data-toggle="modal" data-target="#deleteModal">حذف</a>
-
-                        @endcan
                             <!--modal for delete-->
-                            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header" style="direction: rtl">
-                                            <h5 class="modal-title" id="exampleModalLabel">حذف کتاب</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="direction: ltr">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body" style="direction: rtl">
-                                            آیا از حذف کاربر {{$user->name}} مطمين هستید؟
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">خیر</button>
-                                            <a type="button" class="btn btn-primary" href="/user_delete/{{$user->id}}" >بله حذف کن</a>
+                             <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header" style="direction: rtl">
+                                                <h5 class="modal-title" id="exampleModalLabel">حذف کتاب</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="direction: ltr">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body" style="direction: rtl">
+                                                آیا از حذف کاربر {{$user->name}} مطمين هستید؟
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">خیر</button>
+                                                <a type="button" class="btn btn-primary" href="/user_delete/{{$user->id}}" >بله حذف کن</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+
+                            @elsecan('isAdmin')
+                                <a class="btn btn-black bg-info text-white" href="/order_customer/{{$user->id}}" style="margin-top: 20px ;">لیست سفارشات ثبت نشده</a>
+                                <a class="btn btn-black bg-info text-white" href="/lending_customer/{{$user->id}}" style="margin-top: 20px ;">لیست امانت ها</a>
+                                <a class="btn btn-black bg-info text-white" href="/return_customer/{{$user->id}}" style="margin-top: 20px ;">لیست امانت های تمام شده</a>
+                        @endcan
 
 
 

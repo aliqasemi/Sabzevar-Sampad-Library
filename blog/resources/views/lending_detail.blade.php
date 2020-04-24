@@ -74,7 +74,7 @@
                                         <span class="col-lg-4"></span>
                                     </span>
                             </a>
-                            
+
                             @can('isAdmin')
                                 <a class="btn btn-black bg-info text-white" style="margin-top: 20px ;" href="/lending_update_form/{{$lending->id}}">ویرایش</a>
 
