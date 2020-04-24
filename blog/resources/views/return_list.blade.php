@@ -13,8 +13,8 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-
                         <div class="list-group">
+                            <!--
                             <a href="#" class="bg-dark text-white list-group-item list-group-item-action">
                                     <span class="row">
                                         <span class="col-lg-4 text-primary">تاریخ قرض گرفتن کتاب</span>
@@ -33,6 +33,71 @@
                                     </a>
                                 @endif
                             @endforeach
+                             !-->
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="list-group">
+                                        <table class="table table-hover" id="table">
+                                            <thead class="bg-dark">
+                                            <tr>
+                                                <th class="text-primary">نام کتاب</th>
+                                                <th class="text-warning">تاریخ تحویل</th>
+                                                <th class="text-info">تاریخ قرض گرفتن کتاب</th>
+                                                <th class="text-info">مشاهده جزییات</th>
+                                            </tr>
+                                            </thead>
+                                        </table>
+                                        <script>
+                                            $(function() {
+                                                $('#table').DataTable({
+                                                    processing: true,
+                                                    serverSide: true,
+                                                    ajax: '{{ url('return_data') }}',
+                                                    columns: [
+                                                        { data: 'name', name: 'name' },
+                                                        { data: 'return_date', name: 'return_date' },
+                                                        { data: 'lending_date', name: 'lending_date' },
+                                                        { data: 'id', render: function(data){
+                                                                data = '<a href="/return-detail/' + data + '">     جزییات            </a>';
+                                                                return data;
+                                                            } },
+                                                    ] ,
+                                                    language:{
+                                                        "sEmptyTable":     "هیچ داده‌ای در جدول وجود ندارد",
+                                                        "sInfo":           "نمایش _START_ تا _END_ از _TOTAL_ ردیف",
+                                                        "sInfoEmpty":      "نمایش 0 تا 0 از 0 ردیف",
+                                                        "sInfoFiltered":   "(فیلتر شده از _MAX_ ردیف)",
+                                                        "sInfoPostFix":    "",
+                                                        "sInfoThousands":  ",",
+                                                        "sLengthMenu":     "     _MENU_ ",
+                                                        "sLoadingRecords": "در حال بارگزاری...",
+                                                        "sProcessing":     "در حال پردازش...",
+                                                        "sSearch":         "",
+                                                        "sZeroRecords":    "رکوردی با این مشخصات پیدا نشد",
+                                                        "oPaginate": {
+                                                            "sFirst":    "برگه‌ی نخست",
+                                                            "sLast":     "برگه‌ی آخر",
+                                                            "sNext":     "بعدی",
+                                                            "sPrevious": "قبلی"
+                                                        },
+                                                        "oAria": {
+                                                            "sSortAscending":  ": فعال سازی نمایش به صورت صعودی",
+                                                            "sSortDescending": ": فعال سازی نمایش به صورت نزولی"
+                                                        }
+                                                    }
+                                                });
+                                            });
+                                            $(document).ready(function(){
+                                                $('input').addClass('form-control') ;
+                                                $('input').attr("placeholder" , "عبارت خود را جستو جو کنید") ;
+                                                $('input').css("text-align" , "center") ;
+                                                $('select').addClass('form-control') ;
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

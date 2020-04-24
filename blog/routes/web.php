@@ -69,6 +69,8 @@ Route::get('/lending_delete/{lending}' , 'LendingController@Lending_delete') ;
 
 Route::get('order_delete/{lending}' , 'LendingController@order_delete') ;
 
+Route::get('/return_data' , 'LendingController@any_data') ;
+
 
 //User schema
 

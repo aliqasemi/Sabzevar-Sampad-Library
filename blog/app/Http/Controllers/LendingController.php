@@ -7,6 +7,7 @@ use App\lending;
 use App\User;
 use App\book ;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 
 class LendingController extends Controller
 {
@@ -49,6 +50,16 @@ class LendingController extends Controller
     public function lending_list(){
         $data = lending::where('ban_status' , 1)->get() ;
         return view('lending_list' , compact('data')) ;
+    }
+
+    public function any_data(){
+        return DataTables::of(
+            lending::join('books' , function ($join){
+                $join->on('books.id' , '=' , 'lendings.book_id');
+            })
+                ->select('books.name' , 'ban_status' , 'return_date' , 'lending_date' , 'lendings.id')
+                ->get()->where('ban_status' , 2)
+        )->make(true) ;
     }
 
     public function retrun_list(){
