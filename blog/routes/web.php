@@ -11,7 +11,29 @@
 |
 */
 
+use App\User;
+use Illuminate\Support\Facades\Hash;
+
 Route::get('/', function () {
+    if (User::where('user_Type' , 'superAdmin')->get()->count() == 0){
+        User::create([
+            'name' => 'ali',
+            'email' => 'qasemi4245qq@gmail.com',
+            'password' => Hash::make('123456789'),
+            'first_name' => 'علی',
+            'last_name' => 'قاسمی',
+            'father_name' => 'علی اکبر',
+            'address' => 'قم',
+            'father_job' => 'بازنشسته',
+            'mobile_number' => '09195884064',
+            'father_mobile_number' => '09127540701',
+            'registery_date' => date("Y-m-d h:i:s"),
+            'expiration_date' => null ,
+            'grade' => '1' ,
+            'ban_status' => 1 ,
+            'user_type' => 'superAdmin'
+        ]);
+    }
     return view('welcome');
 });
 
