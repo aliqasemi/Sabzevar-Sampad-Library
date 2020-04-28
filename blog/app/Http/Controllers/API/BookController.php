@@ -125,6 +125,29 @@ class BookController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $validation = $this -> getValidationFactory() -> make($request->all() ,[
+            'name' => ['required', 'string', 'max:100'],
+            'author' => ['required', 'string', 'max:100'],
+            'subject' => [ 'string', 'max:100']
+        ]);
+
+        if ($validation->fails()){
+            return response() -> json(['message' => 'invalid data'] , 400) ;
+        }
+
+        $book = book::find($id) ;
+        $book->name = $request['name'] ;
+        $book->author = $request['author'] ;
+        $book->subject = $request['subject']  ;
+        $book->shabak = $request['shabak'] ;
+        $book->lended = 1 ;
+
+
+        if ($book->save())
+            return response()->json(['message' , 'update seccussfully'] , 200) ;
+        else
+            return response()->json(['message' , 'error!'] , 404) ;
+
     }
 
     /**
@@ -137,5 +160,11 @@ class BookController extends Controller
     public function destroy($id)
     {
         //
+        if (book::find($id)){
+            book::find($id)->delete() ;
+            return response()->json(['message' , 'delete seccussfully'] , 200) ;
+        }
+        else
+            return response()->json(['message' , 'error!'] , 404) ;
     }
 }
