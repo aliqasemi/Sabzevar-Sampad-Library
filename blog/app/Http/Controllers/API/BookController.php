@@ -51,6 +51,31 @@ class BookController extends Controller
     public function store(Request $request)
     {
         //
+
+        $validation = $this -> getValidationFactory() -> make($request->all() ,[
+            'name' => ['required', 'string', 'max:100'],
+            'author' => ['required', 'string', 'max:100'],
+            'subject' => [ 'string', 'max:100'],
+            'shabak' => ['string', 'max:100' , 'unique:books'] ,
+        ]);
+
+        if ($validation->fails()){
+            return response() -> json(['message' => 'invalid data'] , 400) ;
+        }
+
+        $book = new book() ;
+        $book->name = $request['name'] ;
+        $book->author = $request['author'] ;
+        $book->subject = $request['subject']  ;
+        $book->shabak = $request['shabak'] ;
+        $book->lended = 1 ;
+
+
+        if ($book->save())
+            return response()->json(['message' , 'save seccussfully'] , 200) ;
+        else
+            return response()->json(['message' , 'error!'] , 404) ;
+
     }
 
     /**
@@ -63,6 +88,18 @@ class BookController extends Controller
     public function show($id)
     {
         //
+        $book = book::find($id) ;
+
+        if (!$book){
+            return response()->json([
+                'message' => 'not found book!' ,
+
+            ] , 404) ;
+        }
+        else
+            return response()->json($book , 200) ;
+
+
     }
 
     /**
