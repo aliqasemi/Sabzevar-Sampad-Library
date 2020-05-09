@@ -17,4 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('book' , 'API\BookController' , ['except' => 'create' , 'edit']) ;
+Route::resource('book' , 'API\BookController' , ['except' => 'create' , 'edit' ,])->middleware('auth.basic');

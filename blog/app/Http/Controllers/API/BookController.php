@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\book;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -18,15 +19,24 @@ class BookController extends Controller
     public function index()
     {
         //
-        $book = book::paginate(2) ;
-        if(!$book){
-            return response()->json([
-                'message' => 'not found book!' ,
+        if (Gate::allows('isSuperAdmin') || Gate::allows('isAdmin') || Gate::allows('isUser')){
+            $book = book::paginate(2) ;
+            if(!$book){
+                return response()->json([
+                    'message' => 'not found book!' ,
 
-            ] , 404) ;
+                ] , 404) ;
+            }
+            else
+                return response()->json($book , 200) ;
         }
-        else
-            return response()->json($book , 200) ;
+        else{
+            return response()->json([
+                'message' => 'Unauthorized!' ,
+
+            ] , 401) ;
+        }
+
 
     }
 
@@ -63,18 +73,28 @@ class BookController extends Controller
             return response() -> json(['message' => 'invalid data'] , 400) ;
         }
 
-        $book = new book() ;
-        $book->name = $request['name'] ;
-        $book->author = $request['author'] ;
-        $book->subject = $request['subject']  ;
-        $book->shabak = $request['shabak'] ;
-        $book->lended = 1 ;
+        //authorized type checking...
 
+        if (Gate::allows('isSuperAdmin') || Gate::allows('isAdmin')){
+            $book = new book() ;
+            $book->name = $request['name'] ;
+            $book->author = $request['author'] ;
+            $book->subject = $request['subject']  ;
+            $book->shabak = $request['shabak'] ;
+            $book->lended = 1 ;
 
-        if ($book->save())
-            return response()->json(['message' , 'save seccussfully'] , 200) ;
-        else
-            return response()->json(['message' , 'error!'] , 404) ;
+            if ($book->save())
+                return response()->json(['message' , 'save seccussfully'] , 200) ;
+            else
+                return response()->json(['message' , 'error!'] , 404) ;
+        }
+        else{
+            return response()->json([
+                'message' => 'Unauthorized!' ,
+
+            ] , 401) ;
+        }
+
 
     }
 
@@ -89,15 +109,22 @@ class BookController extends Controller
     {
         //
         $book = book::find($id) ;
+        if (Gate::allows('isSuperAdmin') || Gate::allows('isAdmin') || Gate::allows('isUser')){
+            if (!$book){
+                return response()->json([
+                    'message' => 'not found book!' ,
 
-        if (!$book){
-            return response()->json([
-                'message' => 'not found book!' ,
-
-            ] , 404) ;
+                ] , 404) ;
+            }
+            else
+                return response()->json($book , 200) ;
         }
-        else
-            return response()->json($book , 200) ;
+        else{
+            return response()->json([
+                'message' => 'Unauthorized!' ,
+
+            ] , 401) ;
+        }
 
 
     }
@@ -125,28 +152,41 @@ class BookController extends Controller
     public function update(Request $request, $id)
     {
         //
+
         $validation = $this -> getValidationFactory() -> make($request->all() ,[
+            'shabak' => 'string|max:100,'.$this->route('book')->id,
             'name' => ['required', 'string', 'max:100'],
             'author' => ['required', 'string', 'max:100'],
             'subject' => [ 'string', 'max:100']
         ]);
 
-        if ($validation->fails()){
-            return response() -> json(['message' => 'invalid data'] , 400) ;
+        if (Gate::allows('isSuperAdmin') || Gate::allows('isAdmin')){
+            if ($validation->fails()){
+                return response() -> json(['message' => 'invalid data'] , 400) ;
+            }
+
+            $book = book::find($id) ;
+            $book->name = $request['name'] ;
+            $book->author = $request['author'] ;
+            $book->subject = $request['subject']  ;
+            $book->shabak = $request['shabak'] ;
+            $book->lended = 1 ;
+
+
+            if ($book->save())
+                return response()->json(['message' , 'update seccussfully'] , 200) ;
+            else
+                return response()->json(['message' , 'error!'] , 404) ;
+
         }
 
-        $book = book::find($id) ;
-        $book->name = $request['name'] ;
-        $book->author = $request['author'] ;
-        $book->subject = $request['subject']  ;
-        $book->shabak = $request['shabak'] ;
-        $book->lended = 1 ;
+        else{
+            return response()->json([
+                'message' => 'Unauthorized!' ,
 
+            ] , 401) ;
+        }
 
-        if ($book->save())
-            return response()->json(['message' , 'update seccussfully'] , 200) ;
-        else
-            return response()->json(['message' , 'error!'] , 404) ;
 
     }
 
@@ -160,11 +200,21 @@ class BookController extends Controller
     public function destroy($id)
     {
         //
-        if (book::find($id)){
-            book::find($id)->delete() ;
-            return response()->json(['message' , 'delete seccussfully'] , 200) ;
+        if (Gate::allows('isSuperAdmin') || Gate::allows('isAdmin')){
+            if (book::find($id)){
+                book::find($id)->delete() ;
+                return response()->json(['message' , 'delete successfully'] , 200) ;
+            }
+            else
+                return response()->json(['message' , 'error!'] , 404) ;
         }
-        else
-            return response()->json(['message' , 'error!'] , 404) ;
-    }
+        
+        else{
+            return response()->json([
+                'message' => 'Unauthorized!' ,
+
+            ] , 401) ;
+        }
+        }
+
 }
