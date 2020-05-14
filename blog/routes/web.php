@@ -113,3 +113,8 @@ Route::get('/order_customer/{user}' , 'LendingController@user_order_list') ;
 Route::get('/lending_customer/{user}' , 'LendingController@user_lending_list') ;
 
 Route::get('/return_customer/{user}' , 'LendingController@user_return_list') ;
+
+
+//page api react for book list
+
+Route::view('/api_book_list', 'Api_pages/book_list');

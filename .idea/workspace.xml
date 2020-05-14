@@ -2,9 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48b476cd-7c5c-4641-bb10-eccb0be1c552" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/public/css/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/public/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/public/mix-manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/resources/assets/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/resources/assets/js/components/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/resources/assets/js/components/BookList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/resources/assets/js/components/Example.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/resources/assets/js/components/Headers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/resources/views/Api_pages/book_list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sabzevar-sampad-library/src/Partitions/Books.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sabzevar-sampad-library/src/Partitions/Headers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/app/Http/Controllers/API/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/Http/Controllers/API/BookController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/resources/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/assets/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/resources/js/components/ExampleComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sabzevar-sampad-library/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/sabzevar-sampad-library/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sabzevar-sampad-library/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/sabzevar-sampad-library/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +38,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -129,9 +149,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Question" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="B:\Projects\Sabzevar Sampad Library\blog\resources\assets" />
+      <recent name="B:\Projects\Sabzevar Sampad Library\sabzevar-sampad-library\src\Partitions" />
+      <recent name="B:\Projects\Sabzevar Sampad Library\sabzevar-sampad-library\src" />
       <recent name="B:\Projects\Sabzevar Sampad Library\blog\resources\views" />
     </key>
   </component>
@@ -161,7 +185,9 @@
       <workItem from="1587402783286" duration="40278000" />
       <workItem from="1587849982369" duration="14692000" />
       <workItem from="1588957020902" duration="4614000" />
-      <workItem from="1589005271107" duration="3900000" />
+      <workItem from="1589005271107" duration="23911000" />
+      <workItem from="1589305898163" duration="11628000" />
+      <workItem from="1589441910541" duration="9040000" />
     </task>
     <servers />
   </component>
@@ -169,6 +195,22 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="11" y="93" key="#Inspections" timestamp="1589231256939">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="11" y="93" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1589231256939" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589238407447">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1589238407447" />
+    <state x="521" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589144288997">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="521" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1589144288997" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1589148976031">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1589148976031" />
     <state x="499" y="170" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1587852419431">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -177,18 +219,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588189954990" />
-    <state x="730" y="304" key="NewPhpFileDialog" timestamp="1587667767537">
+    <state x="730" y="304" key="NewPhpFileDialog" timestamp="1589321618785">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="730" y="304" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1587667767537" />
+    <state x="730" y="304" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1589321618785" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1587402130609">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587402130609" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1583397068699">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1589237434572">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1583397068699" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589237434572" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1587852248748">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

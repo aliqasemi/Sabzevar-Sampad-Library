@@ -430,10 +430,14 @@
                                         </div>
 
 
+
                                     </div>
                                 </div>
 
                             @endif
+                                <div class="col-lg-6">
+                                     <a href="http://localhost:3000/">React Test</a>
+                                </div>
                         </div>
                 </div>
             </div>
