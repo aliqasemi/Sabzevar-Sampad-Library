@@ -20,7 +20,7 @@ class BookController extends Controller
     {
         //
         if (Gate::allows('isSuperAdmin') || Gate::allows('isAdmin') || Gate::allows('isUser')){
-            $book = book::paginate(2) ;
+            $book = book::paginate() ;
             if(!$book){
                 return response()->json([
                     'message' => 'not found book!' ,

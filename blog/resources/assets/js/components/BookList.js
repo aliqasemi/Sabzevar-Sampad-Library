@@ -51,14 +51,14 @@ class BookList extends Component{
         else {
             return(
                 <div>
-                    <div className='container py-4'>
+                    <div className='container py-4' style={{direction:"rtl", textAlign:"right"}}>
                         <div className='row justify-content-center'>
                                     <div className='col-md-8'>
                                         <div className='card'>
-                                            <div className='card-header'>All Books</div>
+                                            <div className='card-header'>لیست تمامی کتاب ها</div>
                                             <div className='card-body'>
                                                 <Link className='btn btn-primary btn-sm mb-3' to='/create'>
-                                                    Show Book List
+                                                    ایجاد کتاب جدید
                                                 </Link>
                                                 <ul className='list-group list-group-flush'>
                                                     {items.map(book => (

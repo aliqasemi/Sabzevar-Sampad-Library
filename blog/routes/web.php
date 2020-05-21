@@ -14,7 +14,7 @@
 use App\User;
 use Illuminate\Support\Facades\Hash;
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     if (User::where('user_Type' , 'superAdmin')->get()->count() == 0){
         User::create([
             'name' => 'ali',
@@ -35,7 +35,7 @@ Route::get('/', function () {
         ]);
     }
     return view('welcome');
-});
+});*/
 
 Auth::routes();
 
@@ -117,4 +117,6 @@ Route::get('/return_customer/{user}' , 'LendingController@user_return_list') ;
 
 //page api react for book list
 
-Route::view('/api_book_list', 'Api_pages/book_list');
+/*Route::view('/api_book_list', 'Api_pages/book_list');*/
+
+Route::view('/{path?}', 'Api_pages/book_list');

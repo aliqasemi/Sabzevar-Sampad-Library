@@ -2,28 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48b476cd-7c5c-4641-bb10-eccb0be1c552" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/blog/public/css/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/public/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/public/mix-manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/resources/assets/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/resources/assets/js/components/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/resources/assets/js/components/BookList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/resources/assets/js/components/Example.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/resources/assets/js/components/Headers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/resources/views/Api_pages/book_list.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sabzevar-sampad-library/src/Partitions/Books.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sabzevar-sampad-library/src/Partitions/Headers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/resources/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/assets/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/resources/js/components/ExampleComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/app/Http/Controllers/API/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/Http/Controllers/API/BookController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/resources/assets/js/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/assets/js/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/resources/assets/js/components/BookList.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/assets/js/components/BookList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/webpack.mix.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sabzevar-sampad-library/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/sabzevar-sampad-library/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sabzevar-sampad-library/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/sabzevar-sampad-library/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +171,7 @@
       <workItem from="1588957020902" duration="4614000" />
       <workItem from="1589005271107" duration="23911000" />
       <workItem from="1589305898163" duration="11628000" />
-      <workItem from="1589441910541" duration="9040000" />
+      <workItem from="1589441910541" duration="23146000" />
     </task>
     <servers />
   </component>
@@ -231,9 +215,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589237434572" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1587852248748">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1590013608715">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1587852248748" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1590013608715" />
   </component>
 </project>
