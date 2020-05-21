@@ -65551,7 +65551,23 @@ var BookList = /*#__PURE__*/function (_Component) {
       if (error) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, " Error : ", error.message);
       } else if (!isLoaded) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, "Loading....");
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "container py-4",
+          style: {
+            direction: "rtl",
+            textAlign: "center"
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "row justify-content-center"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "col-md-6"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "card"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "card-header"
+        }, "\u062F\u0631 \u062D\u0627\u0644 \u067E\u0631\u062F\u0627\u0632\u0634 \u0627\u0637\u0644\u0627\u0639\u0627\u062A"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "lds-roller"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null))))));
       } else {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "container py-4",
@@ -65691,13 +65707,17 @@ __webpack_require__.r(__webpack_exports__);
 
 var Header = function Header() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-    className: "navbar navbar-expand-md navbar-light navbar-laravel"
+    className: "navbar navbar-expand-md navbar-light navbar-laravel",
+    style: {
+      direction: "rtl",
+      textAlign: "right"
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "navbar-brand",
     to: "/"
-  }, "BookList")));
+  }, "\u06A9\u062A\u0627\u0628 \u0647\u0627")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -65760,16 +65780,25 @@ var NewBook = /*#__PURE__*/function (_Component) {
       author: '',
       subject: '',
       shabak: '',
-      errors: ''
+      errors: '',
+      isLoaded: true
     };
     _this.handleFieldChange = _this.handleFieldChange.bind(_assertThisInitialized(_this));
     _this.handleCreateNewBook = _this.handleCreateNewBook.bind(_assertThisInitialized(_this));
     _this.hasErrorFor = _this.hasErrorFor.bind(_assertThisInitialized(_this));
     _this.renderErrorFor = _this.renderErrorFor.bind(_assertThisInitialized(_this));
+    _this.onLoadPage = _this.onLoadPage.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(NewBook, [{
+    key: "onLoadPage",
+    value: function onLoadPage(event) {
+      this.setState({
+        isLoaded: true
+      });
+    }
+  }, {
     key: "handleFieldChange",
     value: function handleFieldChange(event) {
       /*if (field == "name"){
@@ -65832,71 +65861,93 @@ var NewBook = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "container py-4",
-        style: {
-          direction: "rtl",
-          textAlign: "right"
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "row justify-content-center"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col-md-6"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header"
-      }, "\u0627\u06CC\u062C\u0627\u062F \u06A9\u062A\u0627\u0628 \u062C\u062F\u06CC\u062F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-body"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
-        onSubmit: this.handleCreateNewBook
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        htmlFor: "name"
-      }, "\u0646\u0627\u0645 \u06A9\u062A\u0627\u0628"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        id: "name",
-        type: "text",
-        className: "form-control ".concat(this.hasErrorFor('name') ? 'is-invalid' : ''),
-        name: "name",
-        value: this.state.name,
-        onChange: this.handleFieldChange
-      }), this.renderErrorFor('name')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        htmlFor: "author"
-      }, "\u0646\u0627\u0645 \u0646\u0648\u06CC\u0633\u0646\u062F\u0647"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        id: "author",
-        type: "text",
-        className: "form-control ".concat(this.hasErrorFor('author') ? 'is-invalid' : ''),
-        name: "author",
-        value: this.state.author,
-        onChange: this.handleFieldChange
-      }), this.renderErrorFor('author')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        htmlFor: "subject"
-      }, "\u0645\u0648\u0636\u0648\u0639 \u06A9\u062A\u0627\u0628"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        id: "subject",
-        type: "text",
-        className: "form-control ".concat(this.hasErrorFor('subject') ? 'is-invalid' : ''),
-        name: "subject",
-        value: this.state.subject,
-        onChange: this.handleFieldChange
-      }), this.renderErrorFor('subject')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        htmlFor: "shabak"
-      }, "\u0634\u0645\u0627\u0631\u0647 \u0634\u0627\u0628\u06A9"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        id: "shabak",
-        type: "text",
-        className: "form-control ".concat(this.hasErrorFor('shabak') ? 'is-invalid' : ''),
-        name: "shabak",
-        value: this.state.shabak,
-        onChange: this.handleFieldChange
-      }), this.renderErrorFor('shabak')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-        className: "btn btn-primary"
-      }, "\u0627\u06CC\u062C\u0627\u062F \u06A9\u062A\u0627\u0628 \u062C\u062F\u06CC\u062F")))))));
+      var isLoaded = this.state.isLoaded;
+
+      if (!isLoaded) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "container py-4",
+          style: {
+            direction: "rtl",
+            textAlign: "center"
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "row justify-content-center"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "col-md-6"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "card"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "card-header"
+        }, "\u062F\u0631 \u062D\u0627\u0644 \u067E\u0631\u062F\u0627\u0632\u0634 \u0627\u0637\u0644\u0627\u0639\u0627\u062A"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "lds-roller"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null))))));
+      } else {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "container py-4",
+          style: {
+            direction: "rtl",
+            textAlign: "right"
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "row justify-content-center"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "col-md-6"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "card"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "card-header"
+        }, "\u0627\u06CC\u062C\u0627\u062F \u06A9\u062A\u0627\u0628 \u062C\u062F\u06CC\u062F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "card-body"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
+          onSubmit: this.handleCreateNewBook
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "form-group"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+          htmlFor: "name"
+        }, "\u0646\u0627\u0645 \u06A9\u062A\u0627\u0628"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          id: "name",
+          type: "text",
+          className: "form-control ".concat(this.hasErrorFor('name') ? 'is-invalid' : ''),
+          name: "name",
+          value: this.state.name,
+          onChange: this.handleFieldChange
+        }), this.renderErrorFor('name')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "form-group"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+          htmlFor: "author"
+        }, "\u0646\u0627\u0645 \u0646\u0648\u06CC\u0633\u0646\u062F\u0647"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          id: "author",
+          type: "text",
+          className: "form-control ".concat(this.hasErrorFor('author') ? 'is-invalid' : ''),
+          name: "author",
+          value: this.state.author,
+          onChange: this.handleFieldChange
+        }), this.renderErrorFor('author')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "form-group"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+          htmlFor: "subject"
+        }, "\u0645\u0648\u0636\u0648\u0639 \u06A9\u062A\u0627\u0628"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          id: "subject",
+          type: "text",
+          className: "form-control ".concat(this.hasErrorFor('subject') ? 'is-invalid' : ''),
+          name: "subject",
+          value: this.state.subject,
+          onChange: this.handleFieldChange
+        }), this.renderErrorFor('subject')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "form-group"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+          htmlFor: "shabak"
+        }, "\u0634\u0645\u0627\u0631\u0647 \u0634\u0627\u0628\u06A9"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          id: "shabak",
+          type: "text",
+          className: "form-control ".concat(this.hasErrorFor('shabak') ? 'is-invalid' : ''),
+          name: "shabak",
+          value: this.state.shabak,
+          onChange: this.handleFieldChange
+        }), this.renderErrorFor('shabak')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+          className: "btn btn-primary"
+        }, "\u0627\u06CC\u062C\u0627\u062F \u06A9\u062A\u0627\u0628 \u062C\u062F\u06CC\u062F")))))));
+      }
     }
   }]);
 

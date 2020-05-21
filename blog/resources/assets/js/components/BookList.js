@@ -45,8 +45,27 @@ class BookList extends Component{
             return(<div> Error : {error.message}</div>)
         }
         else if(!isLoaded){
-            return(<div>Loading....</div>)
-
+            return(
+                <div className='container py-4' style={{direction:"rtl", textAlign:"center"}}>
+                    <div className='row justify-content-center'>
+                        <div className='col-md-6'>
+                            <div className='card'>
+                                <div className='card-header'>در حال پردازش اطلاعات</div>
+                                <div className="lds-roller" >
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ) ;
         }
         else {
             return(
