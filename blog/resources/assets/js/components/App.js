@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Headers from './Headers'
 import BookList from './BookList'
 import NewBook from './NewBook'
+import BookDetail from './BookDetail'
 
 
 
@@ -23,6 +24,7 @@ class App extends Component {
                         <Switch>
                             <Route exact path='/' component={BookList}/>
                             <Route path='/create' component={NewBook} />
+                            <Route path='/:id' component={BookDetail} />
                         </Switch>
                     </div>
                 </BrowserRouter>
