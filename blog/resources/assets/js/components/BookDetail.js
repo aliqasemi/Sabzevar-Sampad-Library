@@ -7,13 +7,14 @@ class BookDetail extends Component{
 
     constructor(props, context) {
         super(props, context);
-
         this.state = {
             book : {} ,
             condition : "آزاد" ,
             isLoaded: false ,
         }
+        this.handleDeleteBook = this.handleDeleteBook.bind(this) ;
     }
+
 
     componentDidMount() {
         const bookId = this.props.match.params.id
@@ -40,6 +41,22 @@ class BookDetail extends Component{
                 }) ;
             }
                 )
+    }
+
+    handleDeleteBook(event){
+        event.preventDefault()
+        const { history } = this.props
+        const bookId = this.state.book.id
+        axios.delete(`/api/book/${bookId}`)
+            .then(response => {
+                return (history.push('/'))
+                    .cache(error => {
+                        this.setState({
+                                errors: error.response.data.errors
+                            }
+                        )
+                    });
+            })
     }
 
     render () {
@@ -85,6 +102,8 @@ class BookDetail extends Component{
                                     <p>نام نویسنده : {book.author}</p>
                                     <hr />
                                     <p>شماره شابک : {book.shabak}</p>
+                                    <hr />
+                                    <button onClick={this.handleDeleteBook}>حذف کتاب</button>
                                 </div>
                             </div>
                         </div>

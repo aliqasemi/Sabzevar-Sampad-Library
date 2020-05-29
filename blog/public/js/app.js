@@ -65518,6 +65518,7 @@ var BookDetail = /*#__PURE__*/function (_Component) {
       condition: "آزاد",
       isLoaded: false
     };
+    _this.handleDeleteBook = _this.handleDeleteBook.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -65545,6 +65546,22 @@ var BookDetail = /*#__PURE__*/function (_Component) {
             isLoaded: true,
             error: error
           };
+        });
+      });
+    }
+  }, {
+    key: "handleDeleteBook",
+    value: function handleDeleteBook(event) {
+      var _this3 = this;
+
+      event.preventDefault();
+      var history = this.props.history;
+      var bookId = this.state.book.id;
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a["delete"]("/api/book/".concat(bookId)).then(function (response) {
+        return history.push('/').cache(function (error) {
+          _this3.setState({
+            errors: error.response.data.errors
+          });
         });
       });
     }
@@ -65594,7 +65611,9 @@ var BookDetail = /*#__PURE__*/function (_Component) {
           className: "card-header"
         }, book.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "card-body"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "  \u0648\u0636\u0639\u06CC\u062A \u06A9\u062A\u0627\u0628 :", condition), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "\u0646\u0627\u0645 \u0646\u0648\u06CC\u0633\u0646\u062F\u0647 : ", book.author), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "\u0634\u0645\u0627\u0631\u0647 \u0634\u0627\u0628\u06A9 : ", book.shabak))))));
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "  \u0648\u0636\u0639\u06CC\u062A \u06A9\u062A\u0627\u0628 :", condition), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "\u0646\u0627\u0645 \u0646\u0648\u06CC\u0633\u0646\u062F\u0647 : ", book.author), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "\u0634\u0645\u0627\u0631\u0647 \u0634\u0627\u0628\u06A9 : ", book.shabak), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+          onClick: this.handleDeleteBook
+        }, "\u062D\u0630\u0641 \u06A9\u062A\u0627\u0628"))))));
       }
     }
   }]);
