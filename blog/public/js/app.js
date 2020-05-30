@@ -65399,6 +65399,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _BookList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./BookList */ "./resources/assets/js/components/BookList.js");
 /* harmony import */ var _NewBook__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./NewBook */ "./resources/assets/js/components/NewBook.js");
 /* harmony import */ var _BookDetail__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./BookDetail */ "./resources/assets/js/components/BookDetail.js");
+/* harmony import */ var _UpdateBook__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./UpdateBook */ "./resources/assets/js/components/UpdateBook.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -65429,6 +65430,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var App = /*#__PURE__*/function (_Component) {
   _inherits(App, _Component);
 
@@ -65447,6 +65449,9 @@ var App = /*#__PURE__*/function (_Component) {
         exact: true,
         path: "/",
         component: _BookList__WEBPACK_IMPORTED_MODULE_4__["default"]
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        path: "/update/:id",
+        component: _UpdateBook__WEBPACK_IMPORTED_MODULE_7__["default"]
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/create",
         component: _NewBook__WEBPACK_IMPORTED_MODULE_5__["default"]
@@ -65477,6 +65482,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -65498,6 +65504,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -65611,9 +65618,18 @@ var BookDetail = /*#__PURE__*/function (_Component) {
           className: "card-header"
         }, book.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "card-body"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "  \u0648\u0636\u0639\u06CC\u062A \u06A9\u062A\u0627\u0628 :", condition), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "\u0646\u0627\u0645 \u0646\u0648\u06CC\u0633\u0646\u062F\u0647 : ", book.author), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "\u0634\u0645\u0627\u0631\u0647 \u0634\u0627\u0628\u06A9 : ", book.shabak), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "  \u0648\u0636\u0639\u06CC\u062A \u06A9\u062A\u0627\u0628 :", condition), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "\u0646\u0627\u0645 \u0646\u0648\u06CC\u0633\u0646\u062F\u0647 : ", book.author), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "\u0634\u0645\u0627\u0631\u0647 \u0634\u0627\u0628\u06A9 : ", book.shabak), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "\u0645\u0648\u0636\u0648\u0639 : ", book.subject), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+          className: "btn btn-primary btn-sm mb-3",
+          style: {
+            margin: "0 auto",
+            textAlign: "center"
+          },
           onClick: this.handleDeleteBook
-        }, "\u062D\u0630\u0641 \u06A9\u062A\u0627\u0628"))))));
+        }, "\u062D\u0630\u0641 \u06A9\u062A\u0627\u0628"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          className: "btn btn-primary btn-sm mb-3",
+          to: "/update/".concat(book.id),
+          key: book.id
+        }, "\u0648\u06CC\u0631\u0627\u06CC\u0634 \u06A9\u062A\u0627\u0628"))))));
       }
     }
   }]);
@@ -66121,6 +66137,257 @@ var NewBook = /*#__PURE__*/function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (NewBook);
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/UpdateBook.js":
+/*!******************************************************!*\
+  !*** ./resources/assets/js/components/UpdateBook.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+var UpdateBook = /*#__PURE__*/function (_Component) {
+  _inherits(UpdateBook, _Component);
+
+  var _super = _createSuper(UpdateBook);
+
+  function UpdateBook(props, context) {
+    var _this;
+
+    _classCallCheck(this, UpdateBook);
+
+    _this = _super.call(this, props, context);
+    _this.state = {
+      name: '',
+      author: '',
+      subject: '',
+      shabak: '',
+      book: {},
+      isLoaded: false,
+      error: null,
+      errors: '',
+      book_update: {}
+    };
+    _this.handleFieldChange = _this.handleFieldChange.bind(_assertThisInitialized(_this));
+    _this.handleUpdateBook = _this.handleUpdateBook.bind(_assertThisInitialized(_this));
+    _this.hasErrorFor = _this.hasErrorFor.bind(_assertThisInitialized(_this));
+    _this.renderErrorFor = _this.renderErrorFor.bind(_assertThisInitialized(_this));
+    _this.onLoadPage = _this.onLoadPage.bind(_assertThisInitialized(_this));
+    _this.handleDefaultValue = _this.handleDefaultValue.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(UpdateBook, [{
+    key: "handleDefaultValue",
+    value: function handleDefaultValue() {
+      this.setState({
+        name: this.state.book.name,
+        author: this.state.book.author,
+        subject: this.state.book.subject,
+        shabak: this.state.book.shabak
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var bookId = this.props.match.params.id;
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/book/".concat(bookId)).then(function (response) {
+        _this2.setState({
+          book: response.data,
+          isLoaded: true
+        });
+
+        _this2.handleDefaultValue();
+      }, function (error) {
+        _this2.setState(function (prevState) {
+          return {
+            isLoaded: true,
+            error: error
+          };
+        });
+      });
+    }
+  }, {
+    key: "onLoadPage",
+    value: function onLoadPage(event) {
+      this.setState({
+        isLoaded: true
+      });
+    }
+  }, {
+    key: "handleFieldChange",
+    value: function handleFieldChange(event) {
+      this.setState(_defineProperty({}, event.target.name, event.target.value));
+    }
+  }, {
+    key: "handleUpdateBook",
+    value: function handleUpdateBook(event) {
+      var _this3 = this;
+
+      event.preventDefault();
+      var history = this.props.history;
+      this.setState(this.state.book_update = {
+        name: this.state.name,
+        author: this.state.author,
+        subject: this.state.subject,
+        shabak: this.state.shabak
+      });
+      var bookId = this.state.book.id;
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.put("/api/book/".concat(bookId), this.state.book_update).then(function (response) {
+        return history.push('/').cache(function (error) {
+          _this3.setState({
+            errors: error.response.data.errors
+          });
+        });
+      });
+    }
+  }, {
+    key: "hasErrorFor",
+    value: function hasErrorFor(field) {
+      return this.state.errors[field];
+    }
+  }, {
+    key: "renderErrorFor",
+    value: function renderErrorFor(field) {
+      if (this.hasErrorFor(field)) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+          className: "invalid-feedback"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, this.state.errors[field][0]));
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoaded = this.state.isLoaded;
+
+      if (!isLoaded) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "container py-4",
+          style: {
+            direction: "rtl",
+            textAlign: "center"
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "row justify-content-center"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "col-md-6"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "card"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "card-header"
+        }, "\u062F\u0631 \u062D\u0627\u0644 \u067E\u0631\u062F\u0627\u0632\u0634 \u0627\u0637\u0644\u0627\u0639\u0627\u062A"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "lds-roller"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null))))));
+      } else {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "container py-4",
+          style: {
+            direction: "rtl",
+            textAlign: "right"
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "row justify-content-center"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "col-md-6"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "card"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "card-header"
+        }, "\u0648\u06CC\u0631\u0627\u06CC\u0634 \u06A9\u062A\u0627\u0628"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "card-body"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
+          onSubmit: this.handleUpdateBook
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "form-group"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+          htmlFor: "name"
+        }, "\u0646\u0627\u0645 \u06A9\u062A\u0627\u0628"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          id: "name",
+          type: "text",
+          className: "form-control ".concat(this.hasErrorFor('name') ? 'is-invalid' : ''),
+          name: "name",
+          value: this.state.name,
+          onChange: this.handleFieldChange
+        }), this.renderErrorFor('name')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "form-group"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+          htmlFor: "author"
+        }, "\u0646\u0627\u0645 \u0646\u0648\u06CC\u0633\u0646\u062F\u0647"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          id: "author",
+          type: "text",
+          className: "form-control ".concat(this.hasErrorFor('author') ? 'is-invalid' : ''),
+          name: "author",
+          value: this.state.author,
+          onChange: this.handleFieldChange
+        }), this.renderErrorFor('author')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "form-group"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+          htmlFor: "subject"
+        }, "\u0645\u0648\u0636\u0648\u0639 \u06A9\u062A\u0627\u0628"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          id: "subject",
+          type: "text",
+          className: "form-control ".concat(this.hasErrorFor('subject') ? 'is-invalid' : ''),
+          name: "subject",
+          value: this.state.subject,
+          onChange: this.handleFieldChange
+        }), this.renderErrorFor('subject')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "form-group"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+          htmlFor: "shabak"
+        }, "\u0634\u0645\u0627\u0631\u0647 \u0634\u0627\u0628\u06A9"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          id: "shabak",
+          type: "text",
+          className: "form-control ".concat(this.hasErrorFor('shabak') ? 'is-invalid' : ''),
+          name: "shabak",
+          value: this.state.shabak,
+          onChange: this.handleFieldChange
+        }), this.renderErrorFor('shabak')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+          className: "btn btn-primary"
+        }, "\u0648\u06CC\u0631\u0627\u06CC\u0634 \u06A9\u062A\u0627\u0628")))))));
+      }
+    }
+  }]);
+
+  return UpdateBook;
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (UpdateBook);
 
 /***/ }),
 

@@ -5,6 +5,7 @@ import Headers from './Headers'
 import BookList from './BookList'
 import NewBook from './NewBook'
 import BookDetail from './BookDetail'
+import UpdateBook from './UpdateBook'
 
 
 
@@ -23,6 +24,7 @@ class App extends Component {
                         <Headers />
                         <Switch>
                             <Route exact path='/' component={BookList}/>
+                            <Route path='/update/:id' component={UpdateBook} />
                             <Route path='/create' component={NewBook} />
                             <Route path='/:id' component={BookDetail} />
                         </Switch>

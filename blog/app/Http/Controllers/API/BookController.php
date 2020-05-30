@@ -153,17 +153,10 @@ class BookController extends Controller
     {
         //
 
-        $validation = $this -> getValidationFactory() -> make($request->all() ,[
-            'shabak' => 'string|max:100,'.$this->route('book')->id,
-            'name' => ['required', 'string', 'max:100'],
-            'author' => ['required', 'string', 'max:100'],
-            'subject' => [ 'string', 'max:100']
-        ]);
+
 
         if (Gate::allows('isSuperAdmin') || Gate::allows('isAdmin')){
-            if ($validation->fails()){
-                return response() -> json(['message' => 'invalid data'] , 400) ;
-            }
+
 
             $book = book::find($id) ;
             $book->name = $request['name'] ;

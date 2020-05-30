@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React , {Component} from 'react'
+import {Link} from "react-router-dom";
 
 
 class BookDetail extends Component{
@@ -103,7 +104,13 @@ class BookDetail extends Component{
                                     <hr />
                                     <p>شماره شابک : {book.shabak}</p>
                                     <hr />
-                                    <button onClick={this.handleDeleteBook}>حذف کتاب</button>
+                                    <p>موضوع : {book.subject}</p>
+                                    <hr />
+                                    <button className='btn btn-primary btn-sm mb-3' style={{margin:"0 auto" , textAlign:"center"}} onClick={this.handleDeleteBook}>حذف کتاب</button>
+                                    <hr />
+                                    <Link className='btn btn-primary btn-sm mb-3' to={`/update/${book.id}`} key={book.id}>
+                                        ویرایش کتاب
+                                    </Link>
                                 </div>
                             </div>
                         </div>
