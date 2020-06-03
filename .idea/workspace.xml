@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="48b476cd-7c5c-4641-bb10-eccb0be1c552" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/app/Http/Controllers/API/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/Http/Controllers/API/BookController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/resources/assets/js/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/assets/js/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/resources/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/assets/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/resources/assets/js/components/BookDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/assets/js/components/BookDetail.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +172,7 @@
       <workItem from="1589005271107" duration="23911000" />
       <workItem from="1589305898163" duration="11628000" />
       <workItem from="1589441910541" duration="37058000" />
-      <workItem from="1590334838754" duration="36520000" />
+      <workItem from="1590334838754" duration="52806000" />
     </task>
     <servers />
   </component>
@@ -179,10 +180,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="11" y="93" key="#Inspections" timestamp="1589231256939">
+    <state x="11" y="93" key="#Inspections" timestamp="1591175793347">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="11" y="93" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1589231256939" />
+    <state x="11" y="93" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1591175793347" />
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589238407447">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -195,6 +196,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1589148976031" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591175985892">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1591175985892" />
     <state x="499" y="170" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1587852419431">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

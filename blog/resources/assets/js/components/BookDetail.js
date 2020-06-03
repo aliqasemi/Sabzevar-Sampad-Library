@@ -1,7 +1,8 @@
 import axios from 'axios'
 import React , {Component} from 'react'
 import {Link} from "react-router-dom";
-
+import {Button , ButtonToolbar} from "react-bootstrap";
+import {ComponentModal} from "./views/ComponentModal";
 
 class BookDetail extends Component{
 
@@ -12,6 +13,7 @@ class BookDetail extends Component{
             book : {} ,
             condition : "آزاد" ,
             isLoaded: false ,
+            addModalShow : false
         }
         this.handleDeleteBook = this.handleDeleteBook.bind(this) ;
     }
@@ -27,12 +29,12 @@ class BookDetail extends Component{
                     isLoaded: true ,
                     condition : "رزرو شده"
                 })
-            if (this.state.book.lended == 1){
-                this.setState({
-                    condition : "آزاد"
-                })
-            }
-        } ,
+                if (this.state.book.lended == 1){
+                    this.setState({
+                        condition : "آزاد"
+                    })
+                }
+            } ,
             (error) => {
                 this.setState((prevState) => {
                     return{
@@ -41,7 +43,7 @@ class BookDetail extends Component{
                     }
                 }) ;
             }
-                )
+        )
     }
 
     handleDeleteBook(event){
@@ -91,6 +93,7 @@ class BookDetail extends Component{
             ) ;
         }
         else {
+            let OnModalClose =() => this.setState({addModalShow:false})
             return (
                 <div className='container py-4' style={{direction:"rtl", textAlign:"right"}}>
                     <div className='row justify-content-center'>
@@ -106,11 +109,24 @@ class BookDetail extends Component{
                                     <hr />
                                     <p>موضوع : {book.subject}</p>
                                     <hr />
-                                    <button className='btn btn-primary btn-sm mb-3' style={{margin:"0 auto" , textAlign:"center"}} onClick={this.handleDeleteBook}>حذف کتاب</button>
                                     <hr />
                                     <Link className='btn btn-primary btn-sm mb-3' to={`/update/${book.id}`} key={book.id}>
                                         ویرایش کتاب
                                     </Link>
+                                    <ButtonToolbar>
+                                        <Button variant='primary' onClick={()=>this.setState({addModalShow:true})}>
+                                            حذف
+                                        </Button>
+                                    </ButtonToolbar>
+                                    <ComponentModal
+                                        onHide={OnModalClose}
+                                        show={this.state.addModalShow}
+                                        title={'حذف کتاب'}
+                                        question={'آیا از حذف کتاب مطمین هستید؟'}
+                                        close={'بستن'}
+                                        operation={'حذف'}
+                                        action={this.handleDeleteBook}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -118,8 +134,6 @@ class BookDetail extends Component{
                 </div>
             )
         }
-
-
     }
 }
 export default BookDetail
