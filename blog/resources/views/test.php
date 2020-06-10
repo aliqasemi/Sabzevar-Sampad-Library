@@ -1,6 +1,22 @@
 <?php
 class Mining {
-    public $names , $subjects , $users_id , $books_id , $grades , $father_jobs ,$lends ;
+    public $names , $subjects , $users_id , $books_id , $grades , $father_jobs ,$lends , $length ;
+
+    /**
+     * @return mixed
+     */
+    public function getLength()
+    {
+        return $this->length;
+    }
+
+    /**
+     * @param mixed $length
+     */
+    public function setLength($length): void
+    {
+        $this->length = $length;
+    }
 
     /**
      * @param mixed $names
@@ -164,12 +180,36 @@ class Mining {
             $i++ ;
 
         }
+        $this->setLength($i);
     }
+
+    /**
+    **/
+    public function information_Data(){
+        $yes_number = 0  ;
+        $no_number = 0 ;
+        for ($i = 0 ; $i < $this->getLength() ; $i++){
+           $lend[$i] = $this->getLends($i) ;
+           if (strcmp($lend[$i] , 'yes'))
+               $yes_number++ ;
+           else
+               $no_number++ ;
+        }
+
+        $information_data = 0 ;
+
+        $information_data = -($yes_number / $this->getLength())*log($yes_number / $this->getLength() , 2) - ($no_number / $this->getLength())*log($no_number / $this->getLength() , 2);
+
+        return $information_data ;
+    }
+
+
 }
 
  $m = new Mining() ;
  $m->calculate_arrays();
- echo $m->getNames(3) ;
+ echo $m->getLends(3) ;
+ echo $m->information_Data() ;
 
 
 
