@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="48b476cd-7c5c-4641-bb10-eccb0be1c552" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/resources/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/resources/assets/js/components/BookDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/assets/js/components/BookDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/resources/views/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/views/test.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +169,8 @@
       <workItem from="1589005271107" duration="23911000" />
       <workItem from="1589305898163" duration="11628000" />
       <workItem from="1589441910541" duration="37058000" />
-      <workItem from="1590334838754" duration="52806000" />
+      <workItem from="1590334838754" duration="54321000" />
+      <workItem from="1591770175107" duration="4225000" />
     </task>
     <servers />
   </component>

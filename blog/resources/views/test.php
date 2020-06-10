@@ -1,26 +1,23 @@
 <?php
 
-use Carbon\Carbon;
-use Hekmatinasser\Verta\Verta;
+$i = 0 ;
+$minings = \Illuminate\Support\Facades\DB::select('
+SELECT  `users`.`id` as `user_id` , `book_id` , `books`.`name` , `books`.`subject` ,  `users`.`grade` , `users`.`father_job`
+FROM
+`lendings` , `users` , `books`
+WHERE
+`users`.`id` = `lendings`.`user_id`
+and
+`books`.`id` = `lendings`.`book_id`
+') ;
 
-$before_date = Carbon::now()->subDays(0)->toDateString();
-$after_date = Carbon::now()->addDays(15)->toDateString();
+foreach ($minings as $mining) {
+    $names[$i] =  $mining->name;
+    $subjects[$i] =  $mining->subject;
+    $users_id[$i] =  $mining->user_id;
+    $books_id[$i] =  $mining->book_id;
+    $grades[$i] =  $mining->grade;
+    $father_jobs[$i] =  $mining->father_job;
+    $i++ ;
+}
 
-$before_date = new Verta($before_date);
-$before_date = $before_date->format('Y-n-j   ');
-
-$after_date = new Verta($after_date);
-$after_date = $after_date->format('Y-n-j');
-
-echo $before_date.'    ' ;
-echo $after_date.'      ' ;
-
-$today = verta();
-
-$return_date = Verta::createFromFormat("1396-03-31");
-echo $return_date ;
-/*$return_date = $return_date->format('Y-n-j');
-echo $return_date.'        ' ;
-$different_days = $return_date->diffDays($today);*/
-
-//echo $different_days ;
