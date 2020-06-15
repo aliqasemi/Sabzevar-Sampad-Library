@@ -196,11 +196,44 @@ class Mining {
                $no_number++ ;
         }
 
-        $information_data = 0 ;
 
-        $information_data = -($yes_number / $this->getLength())*log($yes_number / $this->getLength() , 2) - ($no_number / $this->getLength())*log($no_number / $this->getLength() , 2);
+        return -($yes_number / $this->getLength())*log($yes_number / $this->getLength() , 2) - ($no_number / $this->getLength())*log($no_number / $this->getLength() , 2);
+    }
 
-        return $information_data ;
+    public function information_Data_grade(){
+        $grade1['yes'] = 1  ;
+        $grade1['no'] = 1  ;
+        $grade2['yes'] = 1 ;
+        $grade2['no'] = 1 ;
+        $grade3['yes'] = 1 ;
+        $grade3['no'] = 1 ;
+        for ($i = 0 ; $i < $this->getLength() ; $i++){
+            if ($this->getGrades($i) == 1)
+                if (strcmp($this->getLends($i) , 'yes'))
+                    $grade1['yes']++ ;
+                else
+                    $grade1['no']++ ;
+            elseif ($this->getGrades($i) == 2)
+                if (strcmp($this->getLends($i) , 'yes'))
+                    $grade2['yes']++ ;
+                else
+                    $grade2['no']++ ;
+            else
+                if (strcmp($this->getLends($i) , 'yes'))
+                    $grade3['yes']++ ;
+                else
+                    $grade3['no']++ ;
+        }
+
+        $grade['total'] = $grade1['yes'] + $grade1['no'] + $grade2['yes'] + $grade2['no'] + $grade3['yes'] + $grade3['no'] ;
+        $grade['yes'] = $grade1['yes'] + $grade2['yes'] + $grade3['yes'] ;
+        $grade['no'] = $grade1['no'] + $grade2['no'] + $grade3['no'] ;
+        $result1 = (($grade1['yes'] + $grade1['no']) / $grade['total'])*((-($grade1['yes']) / ($grade1['yes'] + $grade1['no'])) * log((($grade1['yes']) / ($grade1['yes'] + $grade1['no'])) , 2) + (-($grade1['no']) / ($grade1['yes'] + $grade1['no'])) * log((($grade1['no']) / ($grade1['yes'] + $grade1['no'])) , 2)) ;
+        $result2 = (($grade2['yes'] + $grade2['no']) / $grade['total'])*((-($grade2['yes']) / ($grade2['yes'] + $grade2['no'])) * log((($grade2['yes']) / ($grade2['yes'] + $grade2['no'])) , 2) + (-($grade2['no']) / ($grade2['yes'] + $grade2['no'])) * log((($grade2['no']) / ($grade2['yes'] + $grade2['no'])) , 2)) ;
+        $result3 = (($grade3['yes'] + $grade3['no']) / $grade['total'])*((-($grade3['yes']) / ($grade3['yes'] + $grade3['no'])) * log((($grade3['yes']) / ($grade3['yes'] + $grade3['no'])) , 2) + (-($grade3['no']) / ($grade3['yes'] + $grade3['no'])) * log((($grade3['no']) / ($grade3['yes'] + $grade3['no'])) , 2)) ;
+
+        return $this->information_Data() - ($result1 + $result2 + $result3) ;
+
     }
 
 
@@ -210,6 +243,7 @@ class Mining {
  $m->calculate_arrays();
  echo $m->getLends(3) ;
  echo $m->information_Data() ;
+ echo $m->information_Data_grade() ;
 
 
 
