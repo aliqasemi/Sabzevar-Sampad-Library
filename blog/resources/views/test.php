@@ -236,14 +236,82 @@ class Mining {
 
     }
 
+    public function information_data_subject(){
+        for ($i = 0 ; $i < $this->getLength() ; $i++){
+            $array[$i] = $this->getSubjects($i) ;
+        }
+
+        $unique = array() ;
+        foreach ($array as $value){
+            if (!in_array($value , $unique)){
+                $unique[] = $value ;
+                $subject[$value]['yes'] = 0 ;
+                $subject[$value]['no'] = 0 ;
+            }
+
+        }
+
+        var_dump($unique);
+        echo '<br>' ;
+        for ($i = 0 ; $i < count($unique) ; $i++){
+            for ($j = 0 ; $j < count($array) ; $j++){
+                if (strcmp($this->getLends($j) , 'yes')) {
+                    if (strcmp($unique[$i], $array[$j]) == 0)
+                        $subject[$unique[$i]]['yes']++;
+                }
+                if (strcmp($this->getLends($j) , 'no')) {
+                    if (strcmp($unique[$i], $array[$j]) == 0)
+                        $subject[$unique[$i]]['no']++;
+                }
+            }
+        }
+
+        $subjects['total'] = 0 ;
+        $subjects['yes'] = 0 ;
+        $subjects['no'] = 0 ;
+
+        foreach ($subject as $s){
+            $subjects['total'] += $s['yes'] + $s['no'] ;
+        }
+
+        foreach ($subject as $s){
+            $subjects['yes'] += $s['yes'] ;
+        }
+
+        foreach ($subject as $s){
+            $subjects['no'] += $s['no'] ;
+        }
+
+        var_dump($subject);
+        $result[]  = 0 ; $i = 0 ;
+
+        foreach ($subject as $s){
+            $result[$i] = (($s['yes'] + $s['no']) / $subjects['total'])*((-($s['yes']) / ($s['yes'] + $s['no'])) * log((($s['yes']) / ($s['yes'] + $s['no'])) , 2) + (-($s['no']) / ($s['yes'] + $s['no'])) * log((($s['no']) / ($s['yes'] + $s['no'])) , 2)) ;
+            if(is_nan($result[$i]))
+                $result[$i] = 0 ;
+            $i++ ;
+        }
+        $results = 0 ;
+        foreach ($result as $s){
+            $results += $s ;
+        }
+
+
+        return $this->information_Data() - $results ;
+    }
+
 
 }
 
  $m = new Mining() ;
  $m->calculate_arrays();
  echo $m->getLends(3) ;
+ echo '<br>' ;
  echo $m->information_Data() ;
+echo '<br>' ;
  echo $m->information_Data_grade() ;
+echo '<br>' ;
+ echo $m->information_data_subject() ;
 
 
 
