@@ -260,7 +260,7 @@ class Mining {
                         $subject[$unique[$i]]['yes']++;
                 }
                 if (strcmp($this->getLends($j) , 'no')) {
-                    if (strcmp($unique[$i], $array[$j]) == 0)
+                    if (strcmp($unique[$i], $array[$j]))
                         $subject[$unique[$i]]['no']++;
                 }
             }
@@ -300,6 +300,71 @@ class Mining {
         return $this->information_Data() - $results ;
     }
 
+    public function information_data_father_job(){
+        for ($i = 0 ; $i < $this->getLength() ; $i++){
+            $array[$i] = $this->getFatherJobs($i) ;
+        }
+
+        $unique = array() ;
+        foreach ($array as $value){
+            if (!in_array($value , $unique)){
+                $unique[] = $value ;
+                $father[$value]['yes'] = 0 ;
+                $father[$value]['no'] = 0 ;
+            }
+
+        }
+
+        var_dump($unique);
+
+        echo '<br>' ;
+        for ($i = 0 ; $i < count($unique) ; $i++){
+            for ($j = 0 ; $j < count($array) ; $j++){
+                if (strcmp($this->getLends($j) , 'yes')) {
+                    if (strcmp($unique[$i], $array[$j]))
+                        $father[$unique[$i]]['yes']++;
+                }
+                if (strcmp($this->getLends($j) , 'no')) {
+                    if (strcmp($unique[$i], $array[$j]) == 0)
+                        $father[$unique[$i]]['no']++;
+                }
+            }
+        }
+
+        $fathers['total'] = 0 ;
+        $fathers['yes'] = 0 ;
+        $fathers['no'] = 0 ;
+
+        foreach ($father as $s){
+            $fathers['total'] += $s['yes'] + $s['no'] ;
+        }
+
+        foreach ($father as $s){
+            $fathers['yes'] += $s['yes'] ;
+        }
+
+        foreach ($father as $s){
+            $fathers['no'] += $s['no'] ;
+        }
+
+        var_dump($father);
+        $result[]  = 0 ; $i = 0 ;
+
+        foreach ($father as $s){
+            $result[$i] = (($s['yes'] + $s['no']) / $fathers['total'])*((-($s['yes']) / ($s['yes'] + $s['no'])) * log((($s['yes']) / ($s['yes'] + $s['no'])) , 2) + (-($s['no']) / ($s['yes'] + $s['no'])) * log((($s['no']) / ($s['yes'] + $s['no'])) , 2)) ;
+            if(is_nan($result[$i]))
+                $result[$i] = 0 ;
+            $i++ ;
+        }
+        $results = 0 ;
+        foreach ($result as $s){
+            $results += $s ;
+        }
+
+
+        return $this->information_Data() - $results ;
+    }
+
 
 }
 
@@ -308,10 +373,12 @@ class Mining {
  echo $m->getLends(3) ;
  echo '<br>' ;
  echo $m->information_Data() ;
-echo '<br>' ;
+ echo '<br>' ;
  echo $m->information_Data_grade() ;
-echo '<br>' ;
+ echo '<br>' ;
  echo $m->information_data_subject() ;
+echo '<br>' ;
+echo $m->information_data_father_job() ;
 
 
 
