@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
 
+
         /*
          * Package Service Providers...
          */
@@ -177,9 +178,11 @@ return [
         App\Providers\RouteServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
         Hekmatinasser\Verta\VertaServiceProvider::class,
-
+        Barryvdh\Debugbar\ServiceProvider::class,
 
     ],
+
+    'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     /*
     |--------------------------------------------------------------------------

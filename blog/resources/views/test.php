@@ -184,7 +184,7 @@ class Mining {
             $this->setLength($i);
         }
         else if (strcmp($gain , 'grade') == 0){
-
+            $i = 0 ;
             $minings = \Illuminate\Support\Facades\DB::select('
                 SELECT  `users`.`id` as `user_id` , `book_id` , `books`.`name` , `books`.`subject` ,  `users`.`grade` , `users`.`father_job`  , `lendings`.`ban_status` as `lend`
                 FROM
@@ -223,6 +223,7 @@ class Mining {
             $this->setLength($i);
         }
         else if (strcmp($gain , 'subject') == 0){
+            $i = 0 ;
             $minings = \Illuminate\Support\Facades\DB::select('
                 SELECT  `users`.`id` as `user_id` , `book_id` , `books`.`name` , `books`.`subject` ,  `users`.`grade` , `users`.`father_job`  , `lendings`.`ban_status` as `lend`
                 FROM
@@ -232,7 +233,7 @@ class Mining {
                 and
                 `books`.`id` = `lendings`.`book_id`
                 and
-                `books`.`subject` = '.$query.'
+                `books`.`subject` =  '.'"'.$query.'"'.'
             ') ;
 
             foreach ($minings as $mining) {
@@ -261,6 +262,7 @@ class Mining {
             $this->setLength($i);
         }
         else if (strcmp($gain , 'father') == 0){
+            $i = 0 ;
             $minings = \Illuminate\Support\Facades\DB::select('
                 SELECT  `users`.`id` as `user_id` , `book_id` , `books`.`name` , `books`.`subject` ,  `users`.`grade` , `users`.`father_job`  , `lendings`.`ban_status` as `lend`
                 FROM
@@ -270,7 +272,7 @@ class Mining {
                 and
                 `books`.`id` = `lendings`.`book_id`
                 and
-                `users`.`father_job` = '.$query.'
+                `users`.`father_job` = '.'"'.$query.'"'.'
             ') ;
 
             foreach ($minings as $mining) {
@@ -491,8 +493,8 @@ class Mining {
 
 
  $m = new Mining() ;
- $m->calculate_arrays('' , '');
- echo $m->getLends(3) ;
+ $m->calculate_arrays('father' , 'کارمند');
+ echo $m->getLends(8) ;
  echo '<br>' ;
  echo $m->information_Data() ;
  echo '<br>' ;
