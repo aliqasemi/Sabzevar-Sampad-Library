@@ -145,9 +145,10 @@ class Mining {
     }
 
 
-    public function calculate_arrays(){
+    public function calculate_arrays($gain , $query){
         $i = 0 ;
-        $minings = \Illuminate\Support\Facades\DB::select('
+        if (strcmp($gain , '') == 0){
+            $minings = \Illuminate\Support\Facades\DB::select('
                 SELECT  `users`.`id` as `user_id` , `book_id` , `books`.`name` , `books`.`subject` ,  `users`.`grade` , `users`.`father_job`  , `lendings`.`ban_status` as `lend`
                 FROM
                 `lendings` , `users` , `books`
@@ -157,31 +158,150 @@ class Mining {
                 `books`.`id` = `lendings`.`book_id`
             ') ;
 
-        foreach ($minings as $mining) {
+            foreach ($minings as $mining) {
 
 
-            $this->setNames($mining->name , $i);
+                $this->setNames($mining->name , $i);
 
-            $this->setSubjects($mining->subject , $i);
+                $this->setSubjects($mining->subject , $i);
 
-            $this->setUsersId($mining->user_id , $i);
+                $this->setUsersId($mining->user_id , $i);
 
-            $this->setBooksId($mining->book_id , $i);
+                $this->setBooksId($mining->book_id , $i);
 
-            $this->setGrades($mining->grade , $i);
+                $this->setGrades($mining->grade , $i);
 
-            $this->setFatherJobs($mining->father_job , $i);
+                $this->setFatherJobs($mining->father_job , $i);
 
-            if ($mining->lend == 2)
-                $this->setLends('yes' , $i);
-            else
-                $this->setLends('no' , $i);
+                if ($mining->lend == 2)
+                    $this->setLends('yes' , $i);
+                else
+                    $this->setLends('no' , $i);
 
-            $i++ ;
+                $i++ ;
 
+            }
+            $this->setLength($i);
         }
-        $this->setLength($i);
+        else if (strcmp($gain , 'grade') == 0){
+
+            $minings = \Illuminate\Support\Facades\DB::select('
+                SELECT  `users`.`id` as `user_id` , `book_id` , `books`.`name` , `books`.`subject` ,  `users`.`grade` , `users`.`father_job`  , `lendings`.`ban_status` as `lend`
+                FROM
+                `lendings` , `users` , `books`
+                WHERE
+                `users`.`id` = `lendings`.`user_id`
+                and
+                `books`.`id` = `lendings`.`book_id`
+                and
+                `users`.`grade` = '.$query.'
+            ') ;
+
+            foreach ($minings as $mining) {
+
+
+                $this->setNames($mining->name , $i);
+
+                $this->setSubjects($mining->subject , $i);
+
+                $this->setUsersId($mining->user_id , $i);
+
+                $this->setBooksId($mining->book_id , $i);
+
+                $this->setGrades($mining->grade , $i);
+
+                $this->setFatherJobs($mining->father_job , $i);
+
+                if ($mining->lend == 2)
+                    $this->setLends('yes' , $i);
+                else
+                    $this->setLends('no' , $i);
+
+                $i++ ;
+
+            }
+            $this->setLength($i);
+        }
+        else if (strcmp($gain , 'subject') == 0){
+            $minings = \Illuminate\Support\Facades\DB::select('
+                SELECT  `users`.`id` as `user_id` , `book_id` , `books`.`name` , `books`.`subject` ,  `users`.`grade` , `users`.`father_job`  , `lendings`.`ban_status` as `lend`
+                FROM
+                `lendings` , `users` , `books`
+                WHERE
+                `users`.`id` = `lendings`.`user_id`
+                and
+                `books`.`id` = `lendings`.`book_id`
+                and
+                `books`.`subject` = '.$query.'
+            ') ;
+
+            foreach ($minings as $mining) {
+
+
+                $this->setNames($mining->name , $i);
+
+                $this->setSubjects($mining->subject , $i);
+
+                $this->setUsersId($mining->user_id , $i);
+
+                $this->setBooksId($mining->book_id , $i);
+
+                $this->setGrades($mining->grade , $i);
+
+                $this->setFatherJobs($mining->father_job , $i);
+
+                if ($mining->lend == 2)
+                    $this->setLends('yes' , $i);
+                else
+                    $this->setLends('no' , $i);
+
+                $i++ ;
+
+            }
+            $this->setLength($i);
+        }
+        else if (strcmp($gain , 'father') == 0){
+            $minings = \Illuminate\Support\Facades\DB::select('
+                SELECT  `users`.`id` as `user_id` , `book_id` , `books`.`name` , `books`.`subject` ,  `users`.`grade` , `users`.`father_job`  , `lendings`.`ban_status` as `lend`
+                FROM
+                `lendings` , `users` , `books`
+                WHERE
+                `users`.`id` = `lendings`.`user_id`
+                and
+                `books`.`id` = `lendings`.`book_id`
+                and
+                `users`.`father_job` = '.$query.'
+            ') ;
+
+            foreach ($minings as $mining) {
+
+
+                $this->setNames($mining->name , $i);
+
+                $this->setSubjects($mining->subject , $i);
+
+                $this->setUsersId($mining->user_id , $i);
+
+                $this->setBooksId($mining->book_id , $i);
+
+                $this->setGrades($mining->grade , $i);
+
+                $this->setFatherJobs($mining->father_job , $i);
+
+                if ($mining->lend == 2)
+                    $this->setLends('yes' , $i);
+                else
+                    $this->setLends('no' , $i);
+
+                $i++ ;
+
+            }
+            $this->setLength($i);
+        }
+
     }
+
+
 
     /**
     **/
@@ -189,16 +309,15 @@ class Mining {
         $yes_number = 0  ;
         $no_number = 0 ;
         for ($i = 0 ; $i < $this->getLength() ; $i++){
-           $lend[$i] = $this->getLends($i) ;
-           if (strcmp($lend[$i] , 'yes'))
-               $yes_number++ ;
-           else
-               $no_number++ ;
+            $lend[$i] = $this->getLends($i) ;
+            if (strcmp($lend[$i] , 'yes'))
+                $yes_number++ ;
+            else
+                $no_number++ ;
         }
-
-
         return -($yes_number / $this->getLength())*log($yes_number / $this->getLength() , 2) - ($no_number / $this->getLength())*log($no_number / $this->getLength() , 2);
     }
+
 
     public function information_Data_grade(){
         $grade1['yes'] = 1  ;
@@ -368,8 +487,11 @@ class Mining {
 
 }
 
+
+
+
  $m = new Mining() ;
- $m->calculate_arrays();
+ $m->calculate_arrays('' , '');
  echo $m->getLends(3) ;
  echo '<br>' ;
  echo $m->information_Data() ;
