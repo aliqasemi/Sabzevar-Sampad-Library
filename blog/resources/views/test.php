@@ -306,10 +306,10 @@ class Mining {
 
 
     /**
-    **/
+     **/
     public function information_Data(){
-        $yes_number = 0  ;
-        $no_number = 0 ;
+        $yes_number = 2  ;
+        $no_number = 2 ;
         for ($i = 0 ; $i < $this->getLength() ; $i++){
             $lend[$i] = $this->getLends($i) ;
             if (strcmp($lend[$i] , 'yes'))
@@ -366,14 +366,12 @@ class Mining {
         foreach ($array as $value){
             if (!in_array($value , $unique)){
                 $unique[] = $value ;
-                $subject[$value]['yes'] = 0 ;
-                $subject[$value]['no'] = 0 ;
+                $subject[$value]['yes'] = 1 ;
+                $subject[$value]['no'] = 1 ;
             }
 
         }
 
-        var_dump($unique);
-        echo '<br>' ;
         for ($i = 0 ; $i < count($unique) ; $i++){
             for ($j = 0 ; $j < count($array) ; $j++){
                 if (strcmp($this->getLends($j) , 'yes')) {
@@ -403,7 +401,6 @@ class Mining {
             $subjects['no'] += $s['no'] ;
         }
 
-        var_dump($subject);
         $result[]  = 0 ; $i = 0 ;
 
         foreach ($subject as $s){
@@ -430,15 +427,13 @@ class Mining {
         foreach ($array as $value){
             if (!in_array($value , $unique)){
                 $unique[] = $value ;
-                $father[$value]['yes'] = 0 ;
-                $father[$value]['no'] = 0 ;
+                $father[$value]['yes'] = 1 ;
+                $father[$value]['no'] = 1 ;
             }
 
         }
 
-        var_dump($unique);
 
-        echo '<br>' ;
         for ($i = 0 ; $i < count($unique) ; $i++){
             for ($j = 0 ; $j < count($array) ; $j++){
                 if (strcmp($this->getLends($j) , 'yes')) {
@@ -468,7 +463,7 @@ class Mining {
             $fathers['no'] += $s['no'] ;
         }
 
-        var_dump($father);
+
         $result[]  = 0 ; $i = 0 ;
 
         foreach ($father as $s){
@@ -486,23 +481,135 @@ class Mining {
         return $this->information_Data() - $results ;
     }
 
+    public function creat_tree(){
+        $m = new Mining() ;
+
+        $m->calculate_arrays('' , '');
+        $gain['grade'] = $m->information_Data_grade() ;
+        $gain['subject'] = $m->information_data_subject() ;
+        $gain['father_job'] = $m->information_data_subject() ;
+        $i = 1 ;
+        if ($gain['grade'] > $gain['subject'] && $gain['grade'] >$gain['father_job']){
+            //1
+            for ($j = 1 ; $j < 4 ; $j++ ){
+                $m->calculate_arrays('grade' , $j);
+                $arr[$i - 1] = array(
+                    array('id'=>0, 'parentid'=>0, 'name'=>'grade'),
+                );
+                $gain['subject'] = $m->information_data_subject() ;
+                $gain['father_job'] = $m->information_data_subject() ;
+                if ($gain['subject'] > $gain['father_job']){
+                    $arr = array(
+                        array('id'=>$i, 'parentid'=>0, 'name'=>'subject'),
+                    );
+                    $i++ ;
+                    $arr = array(
+                        array('id'=>$i, 'parentid'=>$i - 1, 'name'=>'father_job'),
+                    );
+
+                }
+                else{
+                    $arr = array(
+                        array('id'=>$i, 'parentid'=>0, 'name'=>'father_job'),
+                    );
+                    $i++ ;
+                    $arr = array(
+                        array('id'=>$i, 'parentid'=>$i - 1, 'name'=>'subject'),
+                    );
+                }
+            }
+
+        }
+        else if ($gain['subject'] > $gain['grade'] && $gain['subject'] >$gain['father_job']){
+            //1
+            for ($j = 1 ; $j < 4 ; $j++ ){
+                $m->calculate_arrays('subject' , $j);
+                $arr[$i - 1] = array(
+                    array('id'=>0, 'parentid'=>0, 'name'=>'subject'),
+                );
+                $gain['grade'] = $m->information_Data_grade() ;
+                $gain['father_job'] = $m->information_data_subject() ;
+                if ($gain['grade'] > $gain['father_job']){
+                    $arr = array(
+                        array('id'=>$i, 'parentid'=>0, 'name'=>'grade'),
+                    );
+                    $i++ ;
+                    $arr = array(
+                        array('id'=>$i, 'parentid'=>$i - 1, 'name'=>'father_job'),
+                    );
+
+                }
+                else{
+                    $arr = array(
+                        array('id'=>$i, 'parentid'=>0, 'name'=>'father_job'),
+                    );
+                    $i++ ;
+                    $arr = array(
+                        array('id'=>$i, 'parentid'=>$i - 1, 'name'=>'grade'),
+                    );
+                }
+            }
+
+        }
+        else if ($gain['father_job'] > $gain['subject'] && $gain['father_job'] >$gain['grade']){
+            //1
+            for ($j = 1 ; $j < 4 ; $j++ ){
+                $m->calculate_arrays('father_job' , $j);
+                $arr[$i - 1] = array(
+                    array('id'=>0, 'parentid'=>0, 'name'=>'father_job'),
+                );
+                $gain['subject'] = $m->information_data_subject() ;
+                $gain['grade'] = $m->information_data_subject() ;
+                if ($gain['subject'] > $gain['grade']){
+                    $arr = array(
+                        array('id'=>$i, 'parentid'=>0, 'name'=>'subject'),
+                    );
+                    $i++ ;
+                    $arr = array(
+                        array('id'=>$i, 'parentid'=>$i - 1, 'name'=>'grade'),
+                    );
+
+                }
+                else{
+                    $arr = array(
+                        array('id'=>$i, 'parentid'=>0, 'name'=>'grade'),
+                    );
+                    $i++ ;
+                    $arr = array(
+                        array('id'=>$i, 'parentid'=>$i - 1, 'name'=>'subject'),
+                    );
+                }
+            }
+
+        }
+        
+    }
+
 
 }
 
 
 
 
- $m = new Mining() ;
- $m->calculate_arrays('father' , 'کارمند');
- echo $m->getLends(8) ;
- echo '<br>' ;
- echo $m->information_Data() ;
- echo '<br>' ;
- echo $m->information_Data_grade() ;
- echo '<br>' ;
- echo $m->information_data_subject() ;
+$m = new Mining() ;
+
+$m->calculate_arrays('' , '');
+
+//$m->calculate_arrays('' , '');
+echo '<br>' ;
+echo $m->information_Data() ;
+echo '<br>' ;
+echo $m->information_Data_grade() ;
+echo '<br>' ;
+echo $m->information_data_subject() ;
 echo '<br>' ;
 echo $m->information_data_father_job() ;
+
+echo '<br>' ;
+echo $m->creat_tree() ;
+
+
+
 
 
 

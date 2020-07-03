@@ -32,7 +32,6 @@
                                             <input id="author" type="text" class="form-control" name="author" required>
                                         </div>
                                     </div>
-
                                     <div class="form-group row">
                                         <label for="subject" class="col-md-4 col-form-label text-md-right"> موضوع کتاب</label>
 
