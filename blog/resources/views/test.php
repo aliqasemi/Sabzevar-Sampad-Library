@@ -489,100 +489,64 @@ class Mining {
         $gain['subject'] = $m->information_data_subject() ;
         $gain['father_job'] = $m->information_data_subject() ;
         $i = 1 ;
-        if ($gain['grade'] > $gain['subject'] && $gain['grade'] >$gain['father_job']){
+        //$gain['grade'] > $gain['subject'] && $gain['grade'] >$gain['father_job']
+        if (true){
             //1
+
+            $arr = [
+                ['id'=>1, 'parent' => 0, 'name'=>'grade'],
+            ] ;
+
+            $tree = new BlueM\Tree($arr);
+
             for ($j = 1 ; $j < 4 ; $j++ ){
                 $m->calculate_arrays('grade' , $j);
-                $arr[$i - 1] = array(
-                    array('id'=>0, 'parentid'=>0, 'name'=>'grade'),
-                );
+
+
                 $gain['subject'] = $m->information_data_subject() ;
                 $gain['father_job'] = $m->information_data_subject() ;
                 if ($gain['subject'] > $gain['father_job']){
-                    $arr = array(
-                        array('id'=>$i, 'parentid'=>0, 'name'=>'subject'),
-                    );
                     $i++ ;
-                    $arr = array(
-                        array('id'=>$i, 'parentid'=>$i - 1, 'name'=>'father_job'),
-                    );
+                    $new_arr = [
+                        ['id'=>$i , 'parent'=>$i - 1, 'name'=>'subject'.$j],
+                    ] ;
+
+                    $arr = array_merge($arr, $new_arr);
+
+                    $tree->rebuildWithData($arr);
+
+                    $new_arr = [
+                        ['id'=>$i + 1, 'parent'=>$i , 'name'=>'father_job'.$j],
+                    ] ;
+
+                    $arr = array_merge($arr, $new_arr);
+
+                    $tree->rebuildWithData($arr);
 
                 }
                 else{
-                    $arr = array(
-                        array('id'=>$i, 'parentid'=>0, 'name'=>'father_job'),
-                    );
                     $i++ ;
-                    $arr = array(
-                        array('id'=>$i, 'parentid'=>$i - 1, 'name'=>'subject'),
-                    );
+                    $new_arr = [
+                        ['id'=>$i , 'parent'=>$i - 1, 'name'=>'father_job'.$j],
+                    ] ;
+
+                    $arr = array_merge($arr, $new_arr);
+
+                    $tree->rebuildWithData($arr);
+                    $new_arr = [
+                        ['id'=>$i + 1, 'parent'=>$i  , 'name'=>'subject'.$j],
+                    ] ;
+
+                    $arr = array_merge($arr, $new_arr);
+
+                    $tree->rebuildWithData($arr);
+
+
                 }
             }
 
         }
-        else if ($gain['subject'] > $gain['grade'] && $gain['subject'] >$gain['father_job']){
-            //1
-            for ($j = 1 ; $j < 4 ; $j++ ){
-                $m->calculate_arrays('subject' , $j);
-                $arr[$i - 1] = array(
-                    array('id'=>0, 'parentid'=>0, 'name'=>'subject'),
-                );
-                $gain['grade'] = $m->information_Data_grade() ;
-                $gain['father_job'] = $m->information_data_subject() ;
-                if ($gain['grade'] > $gain['father_job']){
-                    $arr = array(
-                        array('id'=>$i, 'parentid'=>0, 'name'=>'grade'),
-                    );
-                    $i++ ;
-                    $arr = array(
-                        array('id'=>$i, 'parentid'=>$i - 1, 'name'=>'father_job'),
-                    );
-
-                }
-                else{
-                    $arr = array(
-                        array('id'=>$i, 'parentid'=>0, 'name'=>'father_job'),
-                    );
-                    $i++ ;
-                    $arr = array(
-                        array('id'=>$i, 'parentid'=>$i - 1, 'name'=>'grade'),
-                    );
-                }
-            }
-
-        }
-        else if ($gain['father_job'] > $gain['subject'] && $gain['father_job'] >$gain['grade']){
-            //1
-            for ($j = 1 ; $j < 4 ; $j++ ){
-                $m->calculate_arrays('father_job' , $j);
-                $arr[$i - 1] = array(
-                    array('id'=>0, 'parentid'=>0, 'name'=>'father_job'),
-                );
-                $gain['subject'] = $m->information_data_subject() ;
-                $gain['grade'] = $m->information_data_subject() ;
-                if ($gain['subject'] > $gain['grade']){
-                    $arr = array(
-                        array('id'=>$i, 'parentid'=>0, 'name'=>'subject'),
-                    );
-                    $i++ ;
-                    $arr = array(
-                        array('id'=>$i, 'parentid'=>$i - 1, 'name'=>'grade'),
-                    );
-
-                }
-                else{
-                    $arr = array(
-                        array('id'=>$i, 'parentid'=>0, 'name'=>'grade'),
-                    );
-                    $i++ ;
-                    $arr = array(
-                        array('id'=>$i, 'parentid'=>$i - 1, 'name'=>'subject'),
-                    );
-                }
-            }
-
-        }
-
+        var_dump($tree);
     }
 
 
