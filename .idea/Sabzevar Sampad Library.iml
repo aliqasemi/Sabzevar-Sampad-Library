@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/blog/tests" isTestSource="true" packagePrefix="Tests\" />
       <excludeFolder url="file://$MODULE_DIR$/blog/vendor/barryvdh/laravel-debugbar" />
+      <excludeFolder url="file://$MODULE_DIR$/blog/vendor/bluem/tree" />
       <excludeFolder url="file://$MODULE_DIR$/blog/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/blog/vendor/dnoegel/php-xdg-base-dir" />
       <excludeFolder url="file://$MODULE_DIR$/blog/vendor/doctrine/inflector" />
@@ -87,6 +88,7 @@
       <excludeFolder url="file://$MODULE_DIR$/blog/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/blog/vendor/symfony/polyfill-php72" />
       <excludeFolder url="file://$MODULE_DIR$/blog/vendor/symfony/polyfill-php73" />
+      <excludeFolder url="file://$MODULE_DIR$/blog/vendor/symfony/polyfill-php80" />
       <excludeFolder url="file://$MODULE_DIR$/blog/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/blog/vendor/symfony/routing" />
       <excludeFolder url="file://$MODULE_DIR$/blog/vendor/symfony/service-contracts" />

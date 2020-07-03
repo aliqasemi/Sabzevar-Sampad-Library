@@ -582,7 +582,7 @@ class Mining {
             }
 
         }
-        
+
     }
 
 

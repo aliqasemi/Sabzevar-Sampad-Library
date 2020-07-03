@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48b476cd-7c5c-4641-bb10-eccb0be1c552" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Sabzevar Sampad Library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Sabzevar Sampad Library.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/resources/views/add_book_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/views/add_book_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/resources/views/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/views/test.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +85,6 @@
       <path value="$PROJECT_DIR$/blog/vendor/nunomaduro/collision" />
       <path value="$PROJECT_DIR$/blog/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/blog/vendor/sebastian/comparator" />
-      <path value="$PROJECT_DIR$/blog/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/blog/vendor/sebastian/object-reflector" />
       <path value="$PROJECT_DIR$/blog/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/blog/vendor/sebastian/code-unit-reverse-lookup" />
@@ -121,7 +122,6 @@
       <path value="$PROJECT_DIR$/blog/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/blog/vendor/symfony/service-contracts" />
       <path value="$PROJECT_DIR$/blog/vendor/symfony/debug" />
-      <path value="$PROJECT_DIR$/blog/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/blog/vendor/symfony/mime" />
       <path value="$PROJECT_DIR$/blog/vendor/opis/closure" />
       <path value="$PROJECT_DIR$/blog/vendor/symfony/routing" />
@@ -135,6 +135,9 @@
       <path value="$PROJECT_DIR$/blog/vendor/hekmatinasser/verta" />
       <path value="$PROJECT_DIR$/blog/vendor/barryvdh/laravel-debugbar" />
       <path value="$PROJECT_DIR$/blog/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/blog/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/blog/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/blog/vendor/doctrine/lexer" />
     </include_path>
   </component>
   <component name="ProjectId" id="1YGFohlWw4YDDSBwA7USzeMNBns" />
@@ -209,7 +212,7 @@
       <workItem from="1593364400638" duration="1408000" />
       <workItem from="1593373372580" duration="655000" />
       <workItem from="1593406946041" duration="5282000" />
-      <workItem from="1593786962676" duration="1936000" />
+      <workItem from="1593786962676" duration="3065000" />
     </task>
     <servers />
   </component>
