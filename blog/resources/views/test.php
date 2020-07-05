@@ -489,8 +489,10 @@ class Mining {
         $gain['subject'] = $m->information_data_subject() ;
         $gain['father_job'] = $m->information_data_subject() ;
         $i = 1 ;
+
         //$gain['grade'] > $gain['subject'] && $gain['grade'] >$gain['father_job']
-        if (true){
+        //$gain['subject'] > $gain['grade'] && $gain['subject'] >$gain['father_job']
+        if (false){
             //1
 
             $arr = [
@@ -535,6 +537,74 @@ class Mining {
                     $tree->rebuildWithData($arr);
                     $new_arr = [
                         ['id'=>$i + 1, 'parent'=>$i  , 'name'=>'subject'.$j],
+                    ] ;
+
+                    $arr = array_merge($arr, $new_arr);
+
+                    $tree->rebuildWithData($arr);
+
+
+                }
+            }
+
+        }
+        else if (true){
+            //1
+
+            $arr = [
+                ['id'=>1, 'parent' => 0, 'name'=>'subject'],
+            ] ;
+
+            for ($j = 0 ; $j < $this->getLength() ; $j++){
+                $array[$j] = $this->getSubjects($j) ;
+            }
+
+            $unique = array() ;
+            foreach ($array as $value){
+                if (!in_array($value , $unique)){
+                    $unique[] = $value ;
+                }
+
+            }
+
+            $tree = new BlueM\Tree($arr);
+
+            foreach ($unique as $data){
+
+                $m->calculate_arrays('subject' , $data);
+
+                $gain['grade'] = $m->information_data_subject() ;
+                $gain['father_job'] = $m->information_data_subject() ;
+                if ($gain['grade'] > $gain['father_job']){
+                    $i++ ;
+                    $new_arr = [
+                        ['id'=>$i , 'parent'=>$i - 1, 'name'=>'grade'.$data],
+                    ] ;
+
+                    $arr = array_merge($arr, $new_arr);
+
+                    $tree->rebuildWithData($arr);
+
+                    $new_arr = [
+                        ['id'=>$i + 1, 'parent'=>$i , 'name'=>'father_job'.$data],
+                    ] ;
+
+                    $arr = array_merge($arr, $new_arr);
+
+                    $tree->rebuildWithData($arr);
+
+                }
+                else{
+                    $i++ ;
+                    $new_arr = [
+                        ['id'=>$i , 'parent'=>$i - 1, 'name'=>'father_job'.$data],
+                    ] ;
+
+                    $arr = array_merge($arr, $new_arr);
+
+                    $tree->rebuildWithData($arr);
+                    $new_arr = [
+                        ['id'=>$i + 1, 'parent'=>$i  , 'name'=>'grade'.$data],
                     ] ;
 
                     $arr = array_merge($arr, $new_arr);
