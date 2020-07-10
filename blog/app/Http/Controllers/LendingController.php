@@ -8,12 +8,15 @@ use App\User;
 use App\book ;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
+use App\Mining;
 
 class LendingController extends Controller
 {
     //
     public function add_lending_form(book $book){
-        return view('add_lending_form' , compact('user') , compact('book')) ;
+        $mining = new Mining();
+        $recommendation = $mining->DFS_Searching() ;
+        return view('add_lending_form' , compact('user' , 'book' , 'recommendation')) ;
     }
 
     public function add_lending(lendingRequest $request){

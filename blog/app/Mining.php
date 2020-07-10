@@ -1,4 +1,6 @@
 <?php
+namespace App;
+
 class Mining {
     public $names , $subjects , $users_id , $books_id , $grades , $father_jobs ,$lends , $length ;
 
@@ -511,7 +513,7 @@ class Mining {
                 if ($gain['subject'] > $gain['father_job']){
                     $i++ ;
                     $new_arr = [
-                        ['id'=>$i , 'parent'=>$i - 1, 'name'=>'subject'.$j],
+                        ['id'=>$i , 'parent'=>$i - 1, 'name'=>'subject-'.$j],
                     ] ;
 
                     $arr = array_merge($arr, $new_arr);
@@ -519,7 +521,7 @@ class Mining {
                     $tree->rebuildWithData($arr);
 
                     $new_arr = [
-                        ['id'=>$i + 1, 'parent'=>$i , 'name'=>'father_job'.$j],
+                        ['id'=>$i + 1, 'parent'=>$i , 'name'=>'father_job-'.$j],
                     ] ;
 
                     $arr = array_merge($arr, $new_arr);
@@ -530,14 +532,14 @@ class Mining {
                 else{
                     $i++ ;
                     $new_arr = [
-                        ['id'=>$i , 'parent'=>$i - 1, 'name'=>'father_job'.$j],
+                        ['id'=>$i , 'parent'=>$i - 1, 'name'=>'father_job-'.$j],
                     ] ;
 
                     $arr = array_merge($arr, $new_arr);
 
                     $tree->rebuildWithData($arr);
                     $new_arr = [
-                        ['id'=>$i + 1, 'parent'=>$i  , 'name'=>'subject'.$j],
+                        ['id'=>$i + 1, 'parent'=>$i  , 'name'=>'subject-'.$j],
                     ] ;
 
                     $arr = array_merge($arr, $new_arr);
@@ -568,7 +570,7 @@ class Mining {
 
             }
 
-            $tree = new BlueM\Tree($arr);
+            $tree = new \BlueM\Tree($arr);
 
             foreach ($unique as $data){
 
@@ -579,7 +581,7 @@ class Mining {
                 if ($gain['grade'] > $gain['father_job']){
                     $i++ ;
                     $new_arr = [
-                        ['id'=>$i , 'parent'=>$i - 1, 'name'=>'grade'.$data],
+                        ['id'=>$i , 'parent'=>$i - 1, 'name'=>'grade-'.$data],
                     ] ;
 
                     $arr = array_merge($arr, $new_arr);
@@ -587,7 +589,7 @@ class Mining {
                     $tree->rebuildWithData($arr);
 
                     $new_arr = [
-                        ['id'=>$i + 1, 'parent'=>$i , 'name'=>'father_job'.$data],
+                        ['id'=>$i + 1, 'parent'=>$i , 'name'=>'father_job-'.$data],
                     ] ;
 
                     $arr = array_merge($arr, $new_arr);
@@ -598,14 +600,14 @@ class Mining {
                 else{
                     $i++ ;
                     $new_arr = [
-                        ['id'=>$i , 'parent'=>$i - 1, 'name'=>'father_job'.$data],
+                        ['id'=>$i , 'parent'=>$i - 1, 'name'=>'father_job-'.$data],
                     ] ;
 
                     $arr = array_merge($arr, $new_arr);
 
                     $tree->rebuildWithData($arr);
                     $new_arr = [
-                        ['id'=>$i + 1, 'parent'=>$i  , 'name'=>'grade'.$data],
+                        ['id'=>$i + 1, 'parent'=>$i  , 'name'=>'grade-'.$data],
                     ] ;
 
                     $arr = array_merge($arr, $new_arr);
@@ -648,7 +650,7 @@ class Mining {
                 if ($gain['grade'] > $gain['subject']){
                     $i++ ;
                     $new_arr = [
-                        ['id'=>$i , 'parent'=>$i - 1, 'name'=>'grade'.$data],
+                        ['id'=>$i , 'parent'=>$i - 1, 'name'=>'grade-'.$data],
                     ] ;
 
                     $arr = array_merge($arr, $new_arr);
@@ -656,7 +658,7 @@ class Mining {
                     $tree->rebuildWithData($arr);
 
                     $new_arr = [
-                        ['id'=>$i + 1, 'parent'=>$i , 'name'=>'subject'.$data],
+                        ['id'=>$i + 1, 'parent'=>$i , 'name'=>'subject-'.$data],
                     ] ;
 
                     $arr = array_merge($arr, $new_arr);
@@ -667,14 +669,14 @@ class Mining {
                 else{
                     $i++ ;
                     $new_arr = [
-                        ['id'=>$i , 'parent'=>$i - 1, 'name'=>'subject'.$data],
+                        ['id'=>$i , 'parent'=>$i - 1, 'name'=>'subject-'.$data],
                     ] ;
 
                     $arr = array_merge($arr, $new_arr);
 
                     $tree->rebuildWithData($arr);
                     $new_arr = [
-                        ['id'=>$i + 1, 'parent'=>$i  , 'name'=>'grade'.$data],
+                        ['id'=>$i + 1, 'parent'=>$i  , 'name'=>'grade-'.$data],
                     ] ;
 
                     $arr = array_merge($arr, $new_arr);
@@ -687,7 +689,43 @@ class Mining {
 
         }
 
-        var_dump($tree);
+        //var_dump($tree);
+
+        return $tree ;
+    }
+
+    public function DFS_Searching(){
+        $result[] = "" ;
+        $i = 0 ;
+        $m = new Mining() ;
+
+        $m->calculate_arrays('' , '');
+
+        /*//$m->calculate_arrays('' , '');
+        echo '<br>' ;
+        echo $m->information_Data() ;
+        echo '<br>' ;
+        echo $m->information_Data_grade() ;
+        echo '<br>' ;
+        echo $m->information_data_subject() ;
+        echo '<br>' ;
+        echo $m->information_data_father_job() ;*/
+
+
+        $tree = $m->creat_tree() ;
+
+        $nodes = $tree->getNodes() ;
+        foreach ($nodes as $item){
+            if (!($item->hasChildren())){
+                $result[$i] = ($item->toArray())["name"] ;
+                $i++ ;
+            }
+        }
+
+        //echo $node ;
+
+        return $result ;
+
     }
 
 
@@ -696,22 +734,8 @@ class Mining {
 
 
 
-$m = new Mining() ;
 
-$m->calculate_arrays('' , '');
 
-//$m->calculate_arrays('' , '');
-echo '<br>' ;
-echo $m->information_Data() ;
-echo '<br>' ;
-echo $m->information_Data_grade() ;
-echo '<br>' ;
-echo $m->information_data_subject() ;
-echo '<br>' ;
-echo $m->information_data_father_job() ;
-
-echo '<br>' ;
-echo $m->creat_tree() ;
 
 
 
