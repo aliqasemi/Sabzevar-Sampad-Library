@@ -195,6 +195,25 @@
                         </form>
                     </div>
                 </div>
+                <div class="container">
+                    <div class="row" style="text-align: center ; margin: 0 auto">
+                        <div class="col-6" style="text-align: center ; margin: 0 auto">
+                            کتاب های پیشنهادی به شما
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row" style="text-align: center ; margin: 0 auto">
+
+                        @foreach($result as $res)
+                            <div class="col-6" style="text-align: center ; margin: 0 auto">
+                                <a href="{{$res->id}}">{{$res->name}} , {{$res->author}}</a>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

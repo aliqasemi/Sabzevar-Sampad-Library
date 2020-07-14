@@ -4,7 +4,11 @@
     <list default="true" id="48b476cd-7c5c-4641-bb10-eccb0be1c552" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/app/Http/Controllers/LendingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/Http/Controllers/LendingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/resources/views/test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/app/Mining.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/Mining.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/resources/assets/js/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/assets/js/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/resources/assets/js/components/BookList.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/assets/js/components/BookList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/resources/views/add_lending_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/views/add_lending_form.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +216,8 @@
       <workItem from="1593373372580" duration="655000" />
       <workItem from="1593406946041" duration="5282000" />
       <workItem from="1593786962676" duration="19691000" />
-      <workItem from="1594394321313" duration="11429000" />
+      <workItem from="1594394321313" duration="13617000" />
+      <workItem from="1594481556618" duration="10904000" />
     </task>
     <servers />
   </component>

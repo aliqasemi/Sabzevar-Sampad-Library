@@ -16,7 +16,28 @@ class LendingController extends Controller
     public function add_lending_form(book $book){
         $mining = new Mining();
         $recommendation = $mining->DFS_Searching() ;
-        return view('add_lending_form' , compact('user' , 'book' , 'recommendation')) ;
+        $data = $recommendation[0] ;
+        $data = explode('-' , $data);
+        $query = $data[1] ;
+        $dec = $data[2] ;
+        if (!strcmp($dec , 'subject')){
+            $result = book::where('subject' , $query)->get() ;
+        }
+        else if (!strcmp($dec , 'father_job')){
+            $result = book::join('users' , function ($join){
+                $join->on('users.id' , '=' , 'lendings.user_id');
+            })
+                ->select('book.*')
+                ->get()->where('father_job' , $query) ;
+        }
+        else{
+            $result = book::join('users' , function ($join){
+                $join->on('users.id' , '=' , 'lendings.user_id');
+            })
+                ->select('book.*')
+                ->get()->where('grade' , $query) ;
+        }
+        return view('add_lending_form' , compact('user' , 'book' , 'result')) ;
     }
 
     public function add_lending(lendingRequest $request){
