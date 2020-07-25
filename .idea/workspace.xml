@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48b476cd-7c5c-4641-bb10-eccb0be1c552" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/app/Http/Controllers/LendingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/Http/Controllers/LendingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/app/Mining.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/Mining.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/resources/assets/js/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/assets/js/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/resources/assets/js/components/BookList.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/assets/js/components/BookList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/resources/views/add_lending_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/views/add_lending_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,63 +50,25 @@
       <path value="$PROJECT_DIR$/blog/vendor/dragonmantank/cron-expression" />
       <path value="$PROJECT_DIR$/blog/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/blog/vendor/composer" />
-      <path value="$PROJECT_DIR$/blog/vendor/facade/ignition" />
-      <path value="$PROJECT_DIR$/blog/vendor/facade/ignition-contracts" />
-      <path value="$PROJECT_DIR$/blog/vendor/facade/flare-client-php" />
-      <path value="$PROJECT_DIR$/blog/vendor/webmozart/assert" />
-      <path value="$PROJECT_DIR$/blog/vendor/scrivo/highlight.php" />
       <path value="$PROJECT_DIR$/blog/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/blog/vendor/egulias/email-validator" />
-      <path value="$PROJECT_DIR$/blog/vendor/myclabs/deep-copy" />
-      <path value="$PROJECT_DIR$/blog/vendor/theseer/tokenizer" />
-      <path value="$PROJECT_DIR$/blog/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/blog/vendor/monolog/monolog" />
-      <path value="$PROJECT_DIR$/blog/vendor/fzaninotto/faker" />
       <path value="$PROJECT_DIR$/blog/vendor/fideloper/proxy" />
-      <path value="$PROJECT_DIR$/blog/vendor/jakub-onderka/php-console-highlighter" />
-      <path value="$PROJECT_DIR$/blog/vendor/jakub-onderka/php-console-color" />
       <path value="$PROJECT_DIR$/blog/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/blog/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/blog/vendor/psr/container" />
       <path value="$PROJECT_DIR$/blog/vendor/psr/log" />
       <path value="$PROJECT_DIR$/blog/vendor/phpoption/phpoption" />
-      <path value="$PROJECT_DIR$/blog/vendor/sebastian/resource-operations" />
-      <path value="$PROJECT_DIR$/blog/vendor/sebastian/recursion-context" />
-      <path value="$PROJECT_DIR$/blog/vendor/sebastian/global-state" />
-      <path value="$PROJECT_DIR$/blog/vendor/phpdocumentor/type-resolver" />
-      <path value="$PROJECT_DIR$/blog/vendor/sebastian/diff" />
-      <path value="$PROJECT_DIR$/blog/vendor/phpdocumentor/reflection-docblock" />
-      <path value="$PROJECT_DIR$/blog/vendor/sebastian/exporter" />
-      <path value="$PROJECT_DIR$/blog/vendor/phpdocumentor/reflection-common" />
-      <path value="$PROJECT_DIR$/blog/vendor/sebastian/object-enumerator" />
-      <path value="$PROJECT_DIR$/blog/vendor/filp/whoops" />
       <path value="$PROJECT_DIR$/blog/vendor/doctrine/inflector" />
-      <path value="$PROJECT_DIR$/blog/vendor/sebastian/environment" />
-      <path value="$PROJECT_DIR$/blog/vendor/nunomaduro/collision" />
-      <path value="$PROJECT_DIR$/blog/vendor/doctrine/instantiator" />
-      <path value="$PROJECT_DIR$/blog/vendor/sebastian/comparator" />
-      <path value="$PROJECT_DIR$/blog/vendor/sebastian/object-reflector" />
-      <path value="$PROJECT_DIR$/blog/vendor/sebastian/version" />
-      <path value="$PROJECT_DIR$/blog/vendor/sebastian/code-unit-reverse-lookup" />
-      <path value="$PROJECT_DIR$/blog/vendor/sebastian/type" />
-      <path value="$PROJECT_DIR$/blog/vendor/phar-io/version" />
-      <path value="$PROJECT_DIR$/blog/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/blog/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/blog/vendor/ramsey/uuid" />
-      <path value="$PROJECT_DIR$/blog/vendor/phpunit/php-token-stream" />
-      <path value="$PROJECT_DIR$/blog/vendor/phpunit/php-text-template" />
-      <path value="$PROJECT_DIR$/blog/vendor/phpunit/php-timer" />
-      <path value="$PROJECT_DIR$/blog/vendor/phpunit/php-file-iterator" />
       <path value="$PROJECT_DIR$/blog/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/blog/vendor/league/flysystem" />
-      <path value="$PROJECT_DIR$/blog/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/blog/vendor/league/commonmark" />
-      <path value="$PROJECT_DIR$/blog/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/blog/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/blog/vendor/laravel/framework" />
       <path value="$PROJECT_DIR$/blog/vendor/laravel/tinker" />
       <path value="$PROJECT_DIR$/blog/vendor/symfony/error-handler" />
-      <path value="$PROJECT_DIR$/blog/vendor/phpspec/prophecy" />
       <path value="$PROJECT_DIR$/blog/vendor/symfony/polyfill-php73" />
       <path value="$PROJECT_DIR$/blog/vendor/symfony/polyfill-php72" />
       <path value="$PROJECT_DIR$/blog/vendor/symfony/polyfill-mbstring" />
@@ -116,7 +76,6 @@
       <path value="$PROJECT_DIR$/blog/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/blog/vendor/symfony/http-kernel" />
       <path value="$PROJECT_DIR$/blog/vendor/symfony/var-dumper" />
-      <path value="$PROJECT_DIR$/blog/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/blog/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/blog/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/blog/vendor/symfony/translation" />
@@ -131,16 +90,55 @@
       <path value="$PROJECT_DIR$/blog/vendor/symfony/css-selector" />
       <path value="$PROJECT_DIR$/blog/vendor/symfony/polyfill-iconv" />
       <path value="$PROJECT_DIR$/blog/vendor/symfony/event-dispatcher-contracts" />
-      <path value="$PROJECT_DIR$/blog/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/blog/vendor/yajra/laravel-datatables-oracle" />
       <path value="$PROJECT_DIR$/blog/vendor/hekmatinasser/notowo" />
       <path value="$PROJECT_DIR$/blog/vendor/hekmatinasser/verta" />
-      <path value="$PROJECT_DIR$/blog/vendor/barryvdh/laravel-debugbar" />
-      <path value="$PROJECT_DIR$/blog/vendor/maximebf/debugbar" />
       <path value="$PROJECT_DIR$/blog/vendor/symfony/polyfill-php80" />
       <path value="$PROJECT_DIR$/blog/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/blog/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/blog/vendor/bluem/tree" />
+      <path value="$PROJECT_DIR$/blog/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/blog/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/blog/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/blog/vendor/jakub-onderka/php-console-color" />
+      <path value="$PROJECT_DIR$/blog/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/blog/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/blog/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/blog/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/blog/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/blog/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/blog/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/blog/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/blog/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/blog/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/blog/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/blog/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/blog/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/blog/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/blog/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/blog/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/blog/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/blog/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/blog/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/blog/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/blog/vendor/facade/flare-client-php" />
+      <path value="$PROJECT_DIR$/blog/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/blog/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/blog/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/blog/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/blog/vendor/facade/ignition" />
+      <path value="$PROJECT_DIR$/blog/vendor/facade/ignition-contracts" />
+      <path value="$PROJECT_DIR$/blog/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/blog/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/blog/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/blog/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/blog/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/blog/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/blog/vendor/scrivo/highlight.php" />
+      <path value="$PROJECT_DIR$/blog/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/blog/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/blog/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/blog/vendor/phpdocumentor/type-resolver" />
     </include_path>
   </component>
   <component name="ProjectId" id="1YGFohlWw4YDDSBwA7USzeMNBns" />
@@ -171,7 +169,7 @@
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" server_name="sampad" start_url="test">
       <method v="2" />
     </configuration>
-    <configuration name="laravel" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" server_name="laravel" start_url="http://127.0.0.1:8000/test">
+    <configuration name="laravel" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" server_name="laravel" start_url="http://127.0.0.1:8000//add-lending-form/6">
       <method v="2" />
     </configuration>
   </component>
@@ -217,7 +215,12 @@
       <workItem from="1593406946041" duration="5282000" />
       <workItem from="1593786962676" duration="19691000" />
       <workItem from="1594394321313" duration="13617000" />
-      <workItem from="1594481556618" duration="10904000" />
+      <workItem from="1594481556618" duration="16944000" />
+      <workItem from="1594920251073" duration="2069000" />
+      <workItem from="1594972669094" duration="1007000" />
+      <workItem from="1595484917433" duration="249000" />
+      <workItem from="1595655687578" duration="775000" />
+      <workItem from="1595656855725" duration="17222000" />
     </task>
     <servers />
   </component>
@@ -237,10 +240,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="348" y="67" key="#Servers/0.0.1536.824@0.0.1536.824" timestamp="1593159367240" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593165305108">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594883259853">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1593165305108" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1594883259853" />
     <state x="521" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589144288997">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -265,58 +268,58 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="484" y="94" key="#sampad/0.0.1536.824@0.0.1536.824" timestamp="1593158135633" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1591978420122">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1595485166678">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1591978420122" />
-    <state width="1076" height="54" key="GridCell.Tab.0.bottom" timestamp="1593977045558">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1595485166678" />
+    <state width="1075" height="155" key="GridCell.Tab.0.bottom" timestamp="1594883841013">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1076" height="54" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593977045558" />
-    <state width="1076" height="54" key="GridCell.Tab.0.center" timestamp="1593977045558">
+    <state width="1075" height="155" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594883841013" />
+    <state width="1075" height="155" key="GridCell.Tab.0.center" timestamp="1594883841013">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1076" height="54" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593977045558" />
-    <state width="1076" height="54" key="GridCell.Tab.0.left" timestamp="1593977045558">
+    <state width="1075" height="155" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594883841013" />
+    <state width="1075" height="155" key="GridCell.Tab.0.left" timestamp="1594883841013">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1076" height="54" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593977045558" />
-    <state width="1076" height="54" key="GridCell.Tab.0.right" timestamp="1593977045558">
+    <state width="1075" height="155" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594883841013" />
+    <state width="1075" height="155" key="GridCell.Tab.0.right" timestamp="1594883841013">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1076" height="54" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593977045558" />
-    <state width="1076" height="54" key="GridCell.Tab.1.bottom" timestamp="1593977045558">
+    <state width="1075" height="155" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594883841013" />
+    <state width="1075" height="155" key="GridCell.Tab.1.bottom" timestamp="1594883841014">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1076" height="54" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593977045558" />
-    <state width="1076" height="54" key="GridCell.Tab.1.center" timestamp="1593977045558">
+    <state width="1075" height="155" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594883841014" />
+    <state width="1075" height="155" key="GridCell.Tab.1.center" timestamp="1594883841014">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1076" height="54" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1593977045558" />
-    <state width="1076" height="54" key="GridCell.Tab.1.left" timestamp="1593977045558">
+    <state width="1075" height="155" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1594883841014" />
+    <state width="1075" height="155" key="GridCell.Tab.1.left" timestamp="1594883841013">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1076" height="54" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1593977045558" />
-    <state width="1076" height="54" key="GridCell.Tab.1.right" timestamp="1593977045558">
+    <state width="1075" height="155" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1594883841013" />
+    <state width="1075" height="155" key="GridCell.Tab.1.right" timestamp="1594883841014">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1076" height="54" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1593977045558" />
-    <state width="1076" height="54" key="GridCell.Tab.2.bottom" timestamp="1593977045559">
+    <state width="1075" height="155" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594883841014" />
+    <state width="1075" height="155" key="GridCell.Tab.2.bottom" timestamp="1594883841014">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1076" height="54" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593977045559" />
-    <state width="1076" height="54" key="GridCell.Tab.2.center" timestamp="1593977045559">
+    <state width="1075" height="155" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594883841014" />
+    <state width="1075" height="155" key="GridCell.Tab.2.center" timestamp="1594883841014">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1076" height="54" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1593977045559" />
-    <state width="1076" height="54" key="GridCell.Tab.2.left" timestamp="1593977045559">
+    <state width="1075" height="155" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1594883841014" />
+    <state width="1075" height="155" key="GridCell.Tab.2.left" timestamp="1594883841014">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1076" height="54" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1593977045559" />
-    <state width="1076" height="54" key="GridCell.Tab.2.right" timestamp="1593977045559">
+    <state width="1075" height="155" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1594883841014" />
+    <state width="1075" height="155" key="GridCell.Tab.2.right" timestamp="1594883841014">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1076" height="54" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1593977045559" />
+    <state width="1075" height="155" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1594883841014" />
     <state x="597" y="135" key="NewPhpClassDialog" timestamp="1594406096402">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -337,6 +340,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587402130609" />
+    <state x="577" y="142" key="ftp.server.browser" timestamp="1595695769492">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="577" y="142" key="ftp.server.browser/0.0.1536.824@0.0.1536.824" timestamp="1595695769492" />
     <state x="492" y="183" key="refactoring.ChangeSignatureDialog" timestamp="1594400990659">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -349,5 +356,20 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1590773191335" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/blog/app/Mining.php</url>
+          <line>485</line>
+          <properties>
+            <option name="className" value="\App\Mining" />
+            <option name="methodName" value="creat_tree" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

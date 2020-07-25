@@ -436,7 +436,7 @@
 
                             @endif
                                 <div class="col-lg-6">
-                                     <a href="http://localhost:3000/">React Test</a>
+                                     <a href="/api">React Test</a>
                                 </div>
                         </div>
                 </div>

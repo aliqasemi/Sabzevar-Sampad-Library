@@ -12,6 +12,7 @@
 */
 
 use App\User;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
 
 /*Route::get('/', function () {
@@ -37,7 +38,21 @@ use Illuminate\Support\Facades\Hash;
     return view('welcome');
 });*/
 
+
+Route::get('config-cash' , function (){
+    Artisan::call('config:cash');
+});
+
+
 Auth::routes();
+
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
 
 Route::get('/test', 'HomeController@test');
 
